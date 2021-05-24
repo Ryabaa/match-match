@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,90 @@
     <link rel="stylesheet" href="./styles/modals/style.css">
 </head>
 <body>
-    
+    <div id="substrate" class="substrate-hidden"></div>
+
+    <header class="header">
+        <div class="header-logo">
+            <div class="header-logo__container">
+                <h2 class="header-logo__text">Match</h2>
+            </div>
+            <div class="header-logo__container">
+                <h2 class="header-logo__text">Match</h2>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <button class="header-nav__container">
+                <div class="header-nav__container-substrate"></div>
+                <div class="header-nav__container-card">
+                    <img src="./assets/icons/question.svg">
+                </div>
+                <p class="header-nav__container-text">About Game</p>
+            </button>
+            <button class="header-nav__container">
+                <img src="./assets/icons/star.svg">
+                <p class="header-nav__container-text">Best Score</p>
+            </button>
+            <button class="header-nav__container">
+                <img src="./assets/icons/settings.svg">
+                <p class="header-nav__container-text">Game Settings</p>
+            </button>
+        </nav>
+        <div class="header-container">
+            <button id="gameStateToggler" class="header-container__btn header-container__start-btn"><span id="gameStateText">Start</span> game</button>
+            <img src="" class="header-container__avatar" id="headerAvatar">
+            <button id="registerOpen" class="header-container__btn header-container__register-btn">register new player</button>
+        </div>
+    </header>
+
+
+    <section id="registerWindow" class="register">
+        <div class="register-header">
+            <h2 class="register-header__title">Register new Player</h2>
+        </div>
+        <div class="register-body">
+            <div class="register-container">
+                <div class="register-card">
+                    <h3 class="register-card__title">First Name</h3>
+                    <p class="register-card__error-text" id="registerErrText_1"></p>
+                    <input type="text" id="registerInput_1" class="register-card__input">
+                    <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_1">
+                    <div class="register-card__icon register-card__icon-error" id="registerIconErr_1">
+                        <img src="./assets/icons/error.png" alt="">
+                    </div>
+                </div>
+                <div class="register-card">
+                    <h3 class="register-card__title">Last Name</h3>
+                    <p class="register-card__error-text" id="registerErrText_2"></p>
+                    <input type="text" id="registerInput_2" class="register-card__input">
+                    <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_2">
+                    <div class="register-card__icon register-card__icon-error" id="registerIconErr_2">
+                        <img src="./assets/icons/error.png" alt="">
+                    </div>
+                </div>
+                <div class="register-card">
+                    <h3 class="register-card__title">E-mail</h3>
+                    <p class="register-card__error-text" id="registerErrText_3"></p>
+                    <input type="text" id="registerInput_3" class="register-card__input">
+                    <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_3">
+                    <div class="register-card__icon register-card__icon-error" id="registerIconErr_3">
+                        <img src="./assets/icons/error.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="register-avatar">
+                <input type="file" id="registerAvatar" accept="image/jpeg,image/png" class="register-avatar__input registerAvatar">
+                <label for="registerAvatar">
+                    <div class="register-avatar__icon" id="registerNoAvatar" alt=""></div>
+                    <img class="register-avatar__user-img" src="" id="registerUserAvatar">
+                </label>
+            </div>
+        </div>
+        <div class="register-footer">
+            <button class="register-footer__btn" id="registerAdd">Add user</button>
+            <button class="register-footer__btn" id="registerCancel">Cancel</button>
+        </div>
+    </section>
+
+    <script type="module" src="./scripts/script.js"></script>
 </body>
 </html>

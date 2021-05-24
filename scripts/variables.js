@@ -1,0 +1,23 @@
+export default {
+    gameStateToggler: document.getElementById("gameStateToggler"),
+    gameStateText: document.getElementById("gameStateText"),
+    headerAvatar: document.getElementById("headerAvatar"),
+    substrate: document.getElementById("substrate"),
+    //-------------------------REGISTER WINDOW----------------------------//
+    registerWindow: document.getElementById("registerWindow"),
+    registerOpen: document.getElementById("registerOpen"),
+    registerInput_1: document.getElementById("registerInput_1"),
+    registerInput_2: document.getElementById("registerInput_2"),
+    registerInput_3: document.getElementById("registerInput_3"),
+    registerIconCheck_1: document.getElementById("registerIconCheck_1"),
+    registerIconCheck_2: document.getElementById("registerIconCheck_2"),
+    registerIconCheck_3: document.getElementById("registerIconCheck_3"),
+    registerIconErr_1: document.getElementById("registerIconErr_1"),
+    registerIconErr_2: document.getElementById("registerIconErr_2"),
+    registerIconErr_3: document.getElementById("registerIconErr_3"),
+    registerAvatar: document.getElementById("registerAvatar"),
+    registerNoAvatar: document.getElementById("registerNoAvatar"),
+    registerUserAvatar: document.getElementById("registerUserAvatar"),
+    registerAdd: document.getElementById("registerAdd"),
+    registerCancel: document.getElementById("registerCancel"),
+};
