@@ -217,4 +217,74 @@ body {
 .header-container__register-btn {
   width: 205px;
 }
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game {
+  margin: 35px 0 125px;
+  background: #0000000d;
+  border-radius: 5px;
+  width: 70%;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-time {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+  background: #ffffff;
+  width: 255px;
+  height: 65px;
+  font-weight: 500;
+  margin: 30px 0 60px;
+  font-size: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #00000066;
+}
+
+.game-field {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  border-radius: 5px;
+}
+
+.game-field__container img {
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 6px #888888;
+          box-shadow: 2px 2px 6px #888888;
+}
 /*# sourceMappingURL=style.css.map */
