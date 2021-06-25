@@ -1,10 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
+export default {
     gameStateToggler: document.getElementById("gameStateToggler"),
     gameStateText: document.getElementById("gameStateText"),
     headerAvatar: document.getElementById("headerAvatar"),
     substrate: document.getElementById("substrate"),
+    minutes: document.getElementById("minutes"),
+    seconds: document.getElementById("seconds"),
     //-------------------------REGISTER WINDOW----------------------------//
     registerWindow: document.getElementById("registerWindow"),
     registerOpen: document.getElementById("registerOpen"),
@@ -35,4 +35,28 @@ exports.default = {
     gameContainer_10: document.getElementById("gameContainer_10"),
     gameContainer_11: document.getElementById("gameContainer_11"),
     gameContainer_12: document.getElementById("gameContainer_12"),
+    gameImage_1: document.getElementById("gameImage_1"),
+    gameImage_2: document.getElementById("gameImage_2"),
+    gameImage_3: document.getElementById("gameImage_3"),
+    gameImage_4: document.getElementById("gameImage_4"),
+    gameImage_5: document.getElementById("gameImage_5"),
+    gameImage_6: document.getElementById("gameImage_6"),
+    gameImage_7: document.getElementById("gameImage_7"),
+    gameImage_8: document.getElementById("gameImage_8"),
+    gameImage_9: document.getElementById("gameImage_9"),
+    gameImage_10: document.getElementById("gameImage_10"),
+    gameImage_11: document.getElementById("gameImage_11"),
+    gameImage_12: document.getElementById("gameImage_12"),
+    backsideCard_1: document.getElementById("backsideCard_1"),
+    backsideCard_2: document.getElementById("backsideCard_2"),
+    backsideCard_3: document.getElementById("backsideCard_3"),
+    backsideCard_4: document.getElementById("backsideCard_4"),
+    backsideCard_5: document.getElementById("backsideCard_5"),
+    backsideCard_6: document.getElementById("backsideCard_6"),
+    backsideCard_7: document.getElementById("backsideCard_7"),
+    backsideCard_8: document.getElementById("backsideCard_8"),
+    backsideCard_9: document.getElementById("backsideCard_9"),
+    backsideCard_10: document.getElementById("backsideCard_10"),
+    backsideCard_11: document.getElementById("backsideCard_11"),
+    backsideCard_12: document.getElementById("backsideCard_12"),
 };

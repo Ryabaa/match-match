@@ -282,9 +282,61 @@ body {
   border-radius: 5px;
 }
 
+.game-field__container {
+  cursor: pointer;
+}
+
 .game-field__container img {
   border-radius: 5px;
   -webkit-box-shadow: 2px 2px 6px #888888;
           box-shadow: 2px 2px 6px #888888;
+}
+
+#gameImage_1 {
+  display: none;
+}
+
+#gameImage_2 {
+  display: none;
+}
+
+#gameImage_3 {
+  display: none;
+}
+
+#gameImage_4 {
+  display: none;
+}
+
+#gameImage_5 {
+  display: none;
+}
+
+#gameImage_6 {
+  display: none;
+}
+
+#gameImage_7 {
+  display: none;
+}
+
+#gameImage_8 {
+  display: none;
+}
+
+#gameImage_9 {
+  display: none;
+}
+
+#gameImage_10 {
+  display: none;
+}
+
+#gameImage_11 {
+  display: none;
+}
+
+#gameImage_12 {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

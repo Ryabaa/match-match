@@ -1,4 +1,4 @@
-import variables from "./variables";
+import variables from "./variables.js";
 
 if (variables.gameStateToggler !== null) {
     // Game state toggler
@@ -103,121 +103,173 @@ variables.gameStateToggler.onclick = function () {
 
 //--------------------ClockTimer---------------//
 
-window.onload = function () {
-    StartStop();
-};
+function clocktimer() {
+    let sec = "00";
+    let min = "00";
 
-var base = 60;
-var clocktimer, dateObj, dm, ds, ms;
-var readout = "";
-var h = 1,
-    m = 1,
-    tm = 1,
-    s = 0,
-    ts = 0,
-    ms = 0,
-    init = 0;
+    setInterval(function () {
+        sec = +sec + 1;
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        if (sec == 60) {
+            sec = "00";
+            min = +min + 1;
 
-function ClearСlock() {
-    clearTimeout(clocktimer);
-    h = 1;
-    m = 1;
-    tm = 1;
-    s = 0;
-    ts = 0;
-    ms = 0;
-    init = 0;
-    readout = "00:00:00";
-    document.MyForm.stopwatch.value = readout;
-}
-
-function StartTIME() {
-    var cdateObj = new Date();
-    var t = cdateObj.getTime() - dateObj.getTime() - s * 1000;
-    if (t > 999) {
-        s++;
-    }
-    if (s >= m * base) {
-        ts = 0;
-        m++;
-    } else {
-        ts = parseInt(ms / 100 + s);
-        if (ts >= base) {
-            ts = ts - (m - 1) * base;
+            if (min < 10) {
+                min = "0" + min;
+            }
         }
-    }
-    if (m > h * base) {
-        tm = 1;
-        h++;
-    } else {
-        tm = parseInt(ms / 100 + m);
-        if (tm >= base) {
-            tm = tm - (h - 1) * base;
-        }
-    }
-    ms = Math.round(t / 10);
-    if (ms > 99) {
-        ms = 0;
-    }
-    if (ms == 0) {
-        ms = "00";
-    }
-    if (ms > 0 && ms <= 9) {
-        ms = "0" + ms;
-    }
-    if (ts > 0) {
-        ds = ts;
-        if (ts < 10) {
-            ds = "0" + ts;
-        }
-    } else {
-        ds = "00";
-    }
-    dm = tm - 1;
-    if (dm > 0) {
-        if (dm < 10) {
-            dm = "0" + dm;
-        }
-    } else {
-        dm = "00";
-    }
-    readout = dm + ":" + ds;
-    document.MyForm.stopwatch.value = readout;
-    clocktimer = setTimeout(StartTIME, 1);
-}
-
-function StartStop() {
-    if (init == 0) {
-        ClearСlock();
-        dateObj = new Date();
-        StartTIME();
-        init = 1;
-    } else {
-        clearTimeout(clocktimer);
-        init = 0;
-    }
+        variables.seconds.innerText = sec;
+        variables.minutes.innerText = min;
+    }, 1000);
 }
 
 //------------Game----------------//
 
 window.onload = function () {
-    console.log(getRandomImages());
-    spawnImages();
+    spawnImages(shuffle(imagesArr));
+    clocktimer();
 };
 
-function getRandomImages() {
-    for (let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], i = a.length; i--; ) {
-        let randIndex = a.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
-        switch (randIndex) {
-            case 1:
-                console.log(2);
-                break;
+let image_1 = `<img class="game-field__container-image" src="./assets/images/elephant.png" />`;
+let image_2 = `<img class="game-field__container-image" src="./assets/images/elephant.png" />`;
+let image_3 = `<img class="game-field__container-image" src="./assets/images/bird.png" />`;
+let image_4 = `<img class="game-field__container-image" src="./assets/images/bird.png" />`;
+let image_5 = `<img class="game-field__container-image" src="./assets/images/wolf.png" />`;
+let image_6 = `<img class="game-field__container-image" src="./assets/images/wolf.png" />`;
+let image_7 = `<img class="game-field__container-image" src="./assets/images/lion.png" />`;
+let image_8 = `<img class="game-field__container-image" src="./assets/images/lion.png" />`;
+let image_9 = `<img class="game-field__container-image" src="./assets/images/tiger.png" />`;
+let image_10 = `<img class="game-field__container-image" src="./assets/images/tiger.png" />`;
+let image_11 = `<img class="game-field__container-image" src="./assets/images/pinguin.png" />`;
+let image_12 = `<img class="game-field__container-image" src="./assets/images/pinguin.png" />`;
 
-            case 2:
-                console.log("kek");
-                break;
-        }
-    }
+let imagesArr = [image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8, image_9, image_10, image_11, image_12];
+
+function shuffle(arr: any) {
+    return arr.sort(() => Math.random() - 0.5);
 }
 
-function spawnImages() {}
+function spawnImages(arr: any) {
+    variables.gameImage_1.innerHTML = arr[0];
+    variables.gameImage_2.innerHTML = arr[1];
+    variables.gameImage_3.innerHTML = arr[2];
+    variables.gameImage_4.innerHTML = arr[3];
+    variables.gameImage_5.innerHTML = arr[4];
+    variables.gameImage_6.innerHTML = arr[5];
+    variables.gameImage_7.innerHTML = arr[6];
+    variables.gameImage_8.innerHTML = arr[7];
+    variables.gameImage_9.innerHTML = arr[8];
+    variables.gameImage_10.innerHTML = arr[9];
+    variables.gameImage_11.innerHTML = arr[10];
+    variables.gameImage_12.innerHTML = arr[11];
+}
+
+variables.gameImage_1.onclick = function () {
+    variables.gameImage_1.style.display = "none";
+    variables.backsideCard_1.style.display = "unset";
+};
+variables.backsideCard_1.onclick = function () {
+    variables.gameImage_1.style.display = "unset";
+    variables.backsideCard_1.style.display = "none";
+};
+
+variables.gameImage_2.onclick = function () {
+    variables.gameImage_2.style.display = "none";
+    variables.backsideCard_2.style.display = "unset";
+};
+variables.backsideCard_2.onclick = function () {
+    variables.gameImage_2.style.display = "unset";
+    variables.backsideCard_2.style.display = "none";
+};
+
+variables.gameImage_3.onclick = function () {
+    variables.gameImage_3.style.display = "none";
+    variables.backsideCard_3.style.display = "unset";
+};
+variables.backsideCard_3.onclick = function () {
+    variables.gameImage_3.style.display = "unset";
+    variables.backsideCard_3.style.display = "none";
+};
+
+variables.gameImage_4.onclick = function () {
+    variables.gameImage_4.style.display = "none";
+    variables.backsideCard_4.style.display = "unset";
+};
+variables.backsideCard_4.onclick = function () {
+    variables.gameImage_4.style.display = "unset";
+    variables.backsideCard_4.style.display = "none";
+};
+
+variables.gameImage_5.onclick = function () {
+    variables.gameImage_5.style.display = "none";
+    variables.backsideCard_5.style.display = "unset";
+};
+variables.backsideCard_5.onclick = function () {
+    variables.gameImage_5.style.display = "unset";
+    variables.backsideCard_5.style.display = "none";
+};
+
+variables.gameImage_6.onclick = function () {
+    variables.gameImage_6.style.display = "none";
+    variables.backsideCard_6.style.display = "unset";
+};
+variables.backsideCard_6.onclick = function () {
+    variables.gameImage_6.style.display = "unset";
+    variables.backsideCard_6.style.display = "none";
+};
+
+variables.gameImage_7.onclick = function () {
+    variables.gameImage_7.style.display = "none";
+    variables.backsideCard_7.style.display = "unset";
+};
+variables.backsideCard_7.onclick = function () {
+    variables.gameImage_7.style.display = "unset";
+    variables.backsideCard_7.style.display = "none";
+};
+
+variables.gameImage_8.onclick = function () {
+    variables.gameImage_8.style.display = "none";
+    variables.backsideCard_8.style.display = "unset";
+};
+variables.backsideCard_8.onclick = function () {
+    variables.gameImage_8.style.display = "unset";
+    variables.backsideCard_8.style.display = "none";
+};
+
+variables.gameImage_9.onclick = function () {
+    variables.gameImage_9.style.display = "none";
+    variables.backsideCard_9.style.display = "unset";
+};
+variables.backsideCard_9.onclick = function () {
+    variables.gameImage_9.style.display = "unset";
+    variables.backsideCard_9.style.display = "none";
+};
+
+variables.gameImage_10.onclick = function () {
+    variables.gameImage_10.style.display = "none";
+    variables.backsideCard_10.style.display = "unset";
+};
+variables.backsideCard_10.onclick = function () {
+    variables.gameImage_10.style.display = "unset";
+    variables.backsideCard_10.style.display = "none";
+};
+
+variables.gameImage_11.onclick = function () {
+    variables.gameImage_11.style.display = "none";
+    variables.backsideCard_11.style.display = "unset";
+};
+variables.backsideCard_11.onclick = function () {
+    variables.gameImage_11.style.display = "unset";
+    variables.backsideCard_11.style.display = "none";
+};
+
+variables.gameImage_12.onclick = function () {
+    variables.gameImage_12.style.display = "none";
+    variables.backsideCard_12.style.display = "unset";
+};
+variables.backsideCard_12.onclick = function () {
+    variables.gameImage_12.style.display = "unset";
+    variables.backsideCard_12.style.display = "none";
+};

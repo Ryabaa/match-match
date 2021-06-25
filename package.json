@@ -1,8 +1,7 @@
 {
-  "name": "match-match",
+  "name": "package",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "./ts-built/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
@@ -20,5 +19,7 @@
   "devDependencies": {
     "lite-server": "^2.6.1",
     "typescript": "^4.3.2"
-  }
+  },
+  "dependencies": {},
+  "description": ""
 }
