@@ -104,8 +104,8 @@ variables.gameStateToggler.onclick = function () {
 //--------------------ClockTimer---------------//
 
 function clocktimer() {
-    let sec = "00";
-    let min = "00";
+    let sec: any = "00";
+    let min: any = "00";
 
     setInterval(function () {
         sec = +sec + 1;
@@ -166,110 +166,66 @@ function spawnImages(arr: any) {
     variables.gameImage_12.innerHTML = arr[11];
 }
 
-variables.gameImage_1.onclick = function () {
-    variables.gameImage_1.style.display = "none";
-    variables.backsideCard_1.style.display = "unset";
-};
-variables.backsideCard_1.onclick = function () {
-    variables.gameImage_1.style.display = "unset";
-    variables.backsideCard_1.style.display = "none";
-};
+let imageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-variables.gameImage_2.onclick = function () {
-    variables.gameImage_2.style.display = "none";
-    variables.backsideCard_2.style.display = "unset";
-};
-variables.backsideCard_2.onclick = function () {
-    variables.gameImage_2.style.display = "unset";
-    variables.backsideCard_2.style.display = "none";
-};
+imageNumbers.forEach(function (i) {
+    variables.gameImage_1.onclick = function () {
+        variables.gameImage_1.style.display = "none";
+        variables.backsideCard_1.style.display = "unset";
+    };
+    variables.backsideCard_1.onclick = function () {
+        variables.gameImage_1.style.display = "unset";
+        variables.backsideCard_1.style.display = "none";
+    };
+});
 
-variables.gameImage_3.onclick = function () {
-    variables.gameImage_3.style.display = "none";
-    variables.backsideCard_3.style.display = "unset";
-};
-variables.backsideCard_3.onclick = function () {
-    variables.gameImage_3.style.display = "unset";
-    variables.backsideCard_3.style.display = "none";
-};
-
-variables.gameImage_4.onclick = function () {
-    variables.gameImage_4.style.display = "none";
-    variables.backsideCard_4.style.display = "unset";
-};
-variables.backsideCard_4.onclick = function () {
-    variables.gameImage_4.style.display = "unset";
-    variables.backsideCard_4.style.display = "none";
-};
-
-variables.gameImage_5.onclick = function () {
-    variables.gameImage_5.style.display = "none";
-    variables.backsideCard_5.style.display = "unset";
-};
-variables.backsideCard_5.onclick = function () {
-    variables.gameImage_5.style.display = "unset";
-    variables.backsideCard_5.style.display = "none";
-};
-
-variables.gameImage_6.onclick = function () {
-    variables.gameImage_6.style.display = "none";
-    variables.backsideCard_6.style.display = "unset";
-};
-variables.backsideCard_6.onclick = function () {
-    variables.gameImage_6.style.display = "unset";
-    variables.backsideCard_6.style.display = "none";
-};
-
-variables.gameImage_7.onclick = function () {
-    variables.gameImage_7.style.display = "none";
-    variables.backsideCard_7.style.display = "unset";
-};
-variables.backsideCard_7.onclick = function () {
-    variables.gameImage_7.style.display = "unset";
-    variables.backsideCard_7.style.display = "none";
-};
-
-variables.gameImage_8.onclick = function () {
-    variables.gameImage_8.style.display = "none";
-    variables.backsideCard_8.style.display = "unset";
-};
-variables.backsideCard_8.onclick = function () {
-    variables.gameImage_8.style.display = "unset";
-    variables.backsideCard_8.style.display = "none";
-};
-
-variables.gameImage_9.onclick = function () {
-    variables.gameImage_9.style.display = "none";
-    variables.backsideCard_9.style.display = "unset";
-};
-variables.backsideCard_9.onclick = function () {
-    variables.gameImage_9.style.display = "unset";
-    variables.backsideCard_9.style.display = "none";
-};
-
-variables.gameImage_10.onclick = function () {
-    variables.gameImage_10.style.display = "none";
-    variables.backsideCard_10.style.display = "unset";
-};
-variables.backsideCard_10.onclick = function () {
-    variables.gameImage_10.style.display = "unset";
-    variables.backsideCard_10.style.display = "none";
-};
-
-variables.gameImage_11.onclick = function () {
-    variables.gameImage_11.style.display = "none";
-    variables.backsideCard_11.style.display = "unset";
-};
-variables.backsideCard_11.onclick = function () {
-    variables.gameImage_11.style.display = "unset";
-    variables.backsideCard_11.style.display = "none";
-};
-
-variables.gameImage_12.onclick = function () {
-    variables.gameImage_12.style.display = "none";
-    variables.backsideCard_12.style.display = "unset";
-};
-variables.backsideCard_12.onclick = function () {
-    variables.gameImage_12.style.display = "unset";
-    variables.backsideCard_12.style.display = "none";
-};
+let imageId = [
+    {
+        id: 1,
+        img: image_1,
+    },
+    {
+        id: 2,
+        img: image_2,
+    },
+    {
+        id: 3,
+        img: image_3,
+    },
+    {
+        id: 4,
+        img: image_4,
+    },
+    {
+        id: 5,
+        img: image_5,
+    },
+    {
+        id: 6,
+        img: image_6,
+    },
+    {
+        id: 7,
+        img: image_7,
+    },
+    {
+        id: 8,
+        img: image_8,
+    },
+    {
+        id: 9,
+        img: image_9,
+    },
+    {
+        id: 10,
+        img: image_10,
+    },
+    {
+        id: 11,
+        img: image_11,
+    },
+    {
+        id: 12,
+        img: image_12,
+    },
+];

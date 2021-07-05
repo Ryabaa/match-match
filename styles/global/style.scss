@@ -19,6 +19,7 @@ html {
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: Roboto;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -193,7 +194,9 @@ body {
         border-radius: 5px;
         &__container {
             cursor: pointer;
+            user-select: none;
             & img {
+                -webkit-user-drag: none;
                 border-radius: 5px;
                 box-shadow: 2px 2px 6px #888888;
             }

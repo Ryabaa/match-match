@@ -1,4 +1,4 @@
-export default {
+let variables = {
     gameStateToggler: document.getElementById("gameStateToggler"),
     gameStateText: document.getElementById("gameStateText"),
     headerAvatar: document.getElementById("headerAvatar"),
@@ -60,3 +60,4 @@ export default {
     backsideCard_11: document.getElementById("backsideCard_11"),
     backsideCard_12: document.getElementById("backsideCard_12"),
 };
+export default variables;
