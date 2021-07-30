@@ -40,6 +40,7 @@ function clocktimer() {
     }, 1000);
 }
 //------------Game----------------//
+let block = false;
 window.onload = function () {
     spawnImages(cards, shuffle(images));
     clocktimer();
@@ -51,10 +52,40 @@ function spawnImages(cards, images) {
         addOnclicks(card);
     });
 }
+let arr = [];
+function check(arr) {
+    if (arr[0] !== arr[1]) {
+        block = true;
+        cards.forEach((card) => {
+            setTimeout(() => {
+                card.imageContainer.style.display = "none";
+                card.cover.style.display = "unset";
+                block = false;
+            }, 1000);
+        });
+    }
+    if (arr[0] == arr[1]) {
+        let index1 = cards.findIndex((n) => n.imageId === arr[0]);
+        if (index1 !== -1) {
+            cards.splice(index1, 1);
+        }
+        let index2 = cards.findIndex((n) => n.imageId === arr[1]);
+        if (index2 !== -1) {
+            cards.splice(index2, 1);
+        }
+    }
+}
 function addOnclicks(card) {
     card.cover.onclick = () => {
-        console.log(card.imageId);
-        card.imageContainer.style.display = "unset";
-        card.cover.style.display = "none";
+        console.log(block);
+        if (block == false) {
+            card.imageContainer.style.display = "unset";
+            card.cover.style.display = "none";
+        }
+        arr.push(card.imageId);
+        if (arr.length === 2) {
+            check(arr);
+            arr = [];
+        }
     };
 }
