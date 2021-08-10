@@ -51,9 +51,27 @@ function spawnImages(cards, images) {
         addOnclicks(card);
     });
 }
+let arr = [];
+function check(n1, n2) {
+    if (n1 !== n2) {
+        cards.forEach((card) => {
+            function test(card) {
+                card.imageContainer.style.display = "none";
+                card.cover.style.display = "unset";
+            }
+            setTimeout(test(card), 10000);
+        });
+    }
+    else {
+    }
+}
 function addOnclicks(card) {
     card.cover.onclick = () => {
-        console.log(card.imageId);
+        arr.push(card.imageId);
+        if (arr.length === 2) {
+            check(arr[0], arr[1]);
+            arr = [];
+        }
         card.imageContainer.style.display = "unset";
         card.cover.style.display = "none";
     };

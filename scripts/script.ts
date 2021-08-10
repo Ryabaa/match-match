@@ -61,9 +61,28 @@ function spawnImages(cards: ICard[], images: IImage[]) {
     });
 }
 
+let arr: number[] = [];
+
+function check(n1: number, n2: number) {
+    if (n1 !== n2) {
+        cards.forEach((card) => {
+            function test(card: ICard): any {
+                card.imageContainer!.style.display = "none";
+                card.cover!.style.display = "unset";
+            }
+            setTimeout(test(card), 10000);
+        });
+    } else {
+    }
+}
+
 function addOnclicks(card: ICard) {
     card.cover!.onclick = () => {
-        console.log(card.imageId);
+        arr.push(card.imageId!);
+        if (arr.length === 2) {
+            check(arr[0], arr[1]);
+            arr = [];
+        }
         card.imageContainer!.style.display = "unset";
         card.cover!.style.display = "none";
     };
