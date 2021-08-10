@@ -63,7 +63,6 @@ function spawnImages(cards: ICard[], images: IImage[]) {
     });
 }
 
-
 let arr: number[] = [];
 function check(arr: number[]) {
     if (arr[0] !== arr[1]) {
