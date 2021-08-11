@@ -40,7 +40,6 @@ function clocktimer() {
     }, 1000);
 }
 //------------Game----------------//
-let block = false;
 window.onload = function () {
     spawnImages(cards, shuffle(images));
     clocktimer();
@@ -55,12 +54,12 @@ function spawnImages(cards, images) {
 let arr = [];
 function check(arr) {
     if (arr[0] !== arr[1]) {
-        block = true;
+        variables.gameFieldSubstrate.style.display = "unset"
         cards.forEach((card) => {
             setTimeout(() => {
                 card.imageContainer.style.display = "none";
                 card.cover.style.display = "unset";
-                block = false;
+                variables.gameFieldSubstrate.style.display = "none"
             }, 1000);
         });
     }
@@ -77,11 +76,8 @@ function check(arr) {
 }
 function addOnclicks(card) {
     card.cover.onclick = () => {
-        console.log(block);
-        if (block == false) {
-            card.imageContainer.style.display = "unset";
-            card.cover.style.display = "none";
-        }
+        card.imageContainer.style.display = "unset";
+        card.cover.style.display = "none";
         arr.push(card.imageId);
         if (arr.length === 2) {
             check(arr);
