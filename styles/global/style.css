@@ -349,7 +349,8 @@ body {
 
 #gameFieldSubstrate {
   display: none;
-  position: absolute;
+  position: fixed;
+  background: red;
   width: 100%;
   height: 100%;
   z-index: 5;
