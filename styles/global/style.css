@@ -275,6 +275,7 @@ body {
 .game-field {
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
   -ms-grid-rows: (auto)[3];
@@ -344,5 +345,13 @@ body {
 
 #gameImage_12 {
   display: none;
+}
+
+#gameFieldSubstrate {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
 }
 /*# sourceMappingURL=style.css.map */
