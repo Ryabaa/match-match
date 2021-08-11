@@ -22,6 +22,7 @@ export let variables = {
     registerUserAvatar: document.getElementById("registerUserAvatar"),
     registerAdd: document.getElementById("registerAdd"),
     registerCancel: document.getElementById("registerCancel"),
+    gameFieldSubstrate: document.getElementById("gameFieldSubstrate"),
 };
 export let cards = [
     { imageContainer: document.getElementById("gameImage_1"), cover: document.getElementById("backsideCard_1"), imageId: undefined },
