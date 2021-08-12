@@ -48,6 +48,8 @@ function clocktimer() {
 
 //------------Game----------------//
 
+let block = false;
+
 window.onload = function () {
     spawnImages(cards, shuffle(images));
     clocktimer();
@@ -62,28 +64,41 @@ function spawnImages(cards: ICard[], images: IImage[]) {
 }
 
 let arr: number[] = [];
-
-function check(n1: number, n2: number) {
-    if (n1 !== n2) {
+function check(arr: number[]) {
+    if (arr[0] !== arr[1]) {
+        block = true;
         cards.forEach((card) => {
-            function test(card: ICard): any {
+            setTimeout(() => {
                 card.imageContainer!.style.display = "none";
                 card.cover!.style.display = "unset";
-            }
-            setTimeout(test(card), 10000);
+                block = false;
+            }, 1000);
         });
-    } else {
+    }
+    if (arr[0] == arr[1]) {
+        let index1 = cards.findIndex((n) => n.imageId === arr[0]);
+        if (index1 !== -1) {
+            cards.splice(index1, 1);
+        }
+
+        let index2 = cards.findIndex((n) => n.imageId === arr[1]);
+        if (index2 !== -1) {
+            cards.splice(index2, 1);
+        }
     }
 }
 
 function addOnclicks(card: ICard) {
     card.cover!.onclick = () => {
+        console.log(block);
+        if (block == false) {
+            card.imageContainer!.style.display = "unset";
+            card.cover!.style.display = "none";
+        }
         arr.push(card.imageId!);
         if (arr.length === 2) {
-            check(arr[0], arr[1]);
+            check(arr);
             arr = [];
         }
-        card.imageContainer!.style.display = "unset";
-        card.cover!.style.display = "none";
     };
 }
