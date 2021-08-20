@@ -289,60 +289,81 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  position: relative;
 }
 
-.game-field__container img {
+.game-field__container-image {
   -webkit-user-drag: none;
+  z-index: 1;
   border-radius: 5px;
   -webkit-box-shadow: 2px 2px 6px #888888;
           box-shadow: 2px 2px 6px #888888;
 }
 
-#gameImage_1 {
+.game-field__container-background {
+  opacity: 0.4;
   display: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-#gameImage_2 {
-  display: none;
+.game-field__container-backgroundRed {
+  background-color: #9e1717;
 }
 
-#gameImage_3 {
-  display: none;
+.game-field__container-backgroundGreen {
+  background-color: #39833d;
 }
 
-#gameImage_4 {
-  display: none;
-}
-
-#gameImage_5 {
-  display: none;
-}
-
-#gameImage_6 {
-  display: none;
-}
-
-#gameImage_7 {
-  display: none;
-}
-
-#gameImage_8 {
-  display: none;
-}
-
-#gameImage_9 {
-  display: none;
-}
-
-#gameImage_10 {
-  display: none;
-}
-
-#gameImage_11 {
-  display: none;
-}
-
+#gameImage_1,
+#gameImage_2,
+#gameImage_3,
+#gameImage_4,
+#gameImage_5,
+#gameImage_6,
+#gameImage_7,
+#gameImage_8,
+#gameImage_9,
+#gameImage_10,
+#gameImage_11,
 #gameImage_12 {
   display: none;
+}
+
+#gameFieldSubstrate {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.gameImageStateIcon {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+}
+
+.fail,
+.succes {
+  display: none;
+}
+
+.failVis,
+.succesVis {
+  display: unset;
+}
+
+.cardCover {
+  z-index: 3;
+  position: relative;
+  -webkit-user-drag: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 6px #888888;
+          box-shadow: 2px 2px 6px #888888;
 }
 /*# sourceMappingURL=style.css.map */

@@ -48,8 +48,6 @@ function clocktimer() {
 
 //------------Game----------------//
 
-let block = false;
-
 window.onload = function () {
     spawnImages(cards, shuffle(images));
     clocktimer();
@@ -66,16 +64,28 @@ function spawnImages(cards: ICard[], images: IImage[]) {
 let arr: number[] = [];
 function check(arr: number[]) {
     if (arr[0] !== arr[1]) {
-        block = true;
+        variables.gameFieldSubstrate.style.display = "unset";
         cards.forEach((card) => {
+            setTimeout(() => {
+                //variables.background!.style.display = "unset";
+                variables.fail.classList.remove("fail");
+                variables.fail.classList.toggle("failVis");
+            }, 1000);
             setTimeout(() => {
                 card.imageContainer!.style.display = "none";
                 card.cover!.style.display = "unset";
-                block = false;
-            }, 1000);
+                variables.gameFieldSubstrate.style.display = "none";
+                //variables.background!.style.display = "none";
+                variables.fail.classList.remove("failVis");
+                variables.fail.classList.toggle("fail");
+            }, 2000);
         });
     }
     if (arr[0] == arr[1]) {
+        setTimeout(() => {
+            variables.succes.classList.remove("succes");
+            variables.succes.classList.toggle("succesVis");
+        }, 1000);
         let index1 = cards.findIndex((n) => n.imageId === arr[0]);
         if (index1 !== -1) {
             cards.splice(index1, 1);
@@ -90,11 +100,8 @@ function check(arr: number[]) {
 
 function addOnclicks(card: ICard) {
     card.cover!.onclick = () => {
-        console.log(block);
-        if (block == false) {
-            card.imageContainer!.style.display = "unset";
-            card.cover!.style.display = "none";
-        }
+        card.imageContainer!.style.display = "unset";
+        card.cover!.style.display = "none";
         arr.push(card.imageId!);
         if (arr.length === 2) {
             check(arr);
