@@ -3,6 +3,8 @@ export interface ICard {
     cover: HTMLElement | null;
     succes: HTMLElement | null;
     fail: HTMLElement | null;
+    succesCover: HTMLElement | null;
+    failCover: HTMLElement | null;
     imageId: number | null;
 }
 

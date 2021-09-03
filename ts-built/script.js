@@ -1,5 +1,6 @@
 import { variables, cards, images } from "./variables.js";
 import { shuffle } from "./utils.js";
+import { openResultWindow } from "./modals.js";
 if (variables.gameStateToggler !== null) {
     // Game state toggler
 }
@@ -23,6 +24,7 @@ variables.gameStateToggler.onclick = function () {
 function clocktimer() {
     let sec = "00";
     let min = "00";
+    let time = `${min}:${sec}`;
     setInterval(function () {
         sec = +sec + 1;
         if (sec < 10) {
@@ -59,19 +61,25 @@ function check(arr, card, getSucces) {
         cards.forEach((card) => {
             setTimeout(() => {
                 card.fail.style.display = "unset";
+                card.failCover.style.display = "unset";
             }, 1000);
             setTimeout(() => {
                 card.imageContainer.style.display = "none";
                 card.cover.style.display = "unset";
-                variables.gameFieldSubstrate.style.display = "none";
                 card.fail.style.display = "none";
+                card.failCover.style.display = "none";
+                variables.gameFieldSubstrate.style.display = "none";
             }, 2000);
         });
     }
     if (arr[0] == arr[1]) {
         setTimeout(() => {
             card.succes.style.display = "unset";
+            card.succesCover.style.display = "unset";
             getSucces();
+            if (cards.length === 0) {
+                openResultWindow();
+            }
         }, 1000);
         let index1 = cards.findIndex((n) => n.imageId === arr[0]);
         if (index1 !== -1) {
@@ -88,6 +96,7 @@ function addOnclicks(card) {
         card.imageContainer.style.display = "unset";
         card.cover.style.display = "none";
         let succes = card.succes;
+        let succesCover = card.succesCover;
         arr.push(card.imageId);
         if (arr.length === 2) {
             check(arr, card, getSucces);
@@ -95,6 +104,7 @@ function addOnclicks(card) {
         }
         else {
             getSucces = () => {
+                succesCover.style.display = "unset";
                 succes.style.display = "unset";
             };
         }

@@ -39,7 +39,7 @@ input {
     visibility: hidden;
     position: fixed;
     left: 50%;
-    z-index: 4;
+    z-index: 6;
     top: 50%;
     transform: translate(-50%, -50%);
     margin-top: 150%;
@@ -201,5 +201,53 @@ input {
     &-hidden {
         visibility: hidden;
         opacity: 0;
+    }
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 360px;
+    min-height: 130px;
+    padding: 20px 30px;
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    background-color: $secondary;
+    z-index: 6;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 150%;
+    @include modalsTrans();
+    &-visible {
+        visibility: visible;
+        margin: 0;
+    }
+    &-text {
+        font-family: Roboto;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        color: #00000099;
+        font-weight: 500;
+    }
+    &-btn {
+        width: 100px;
+        height: 36px;
+        background: $primary;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+        border-radius: 4px;
+        text-align: center;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        color: $secondary;
+        @include slowTrans();
+        &:hover {
+            background-color: $secondary;
+            border: 1px solid $primary;
+            color: $primary;
+        }
     }
 }

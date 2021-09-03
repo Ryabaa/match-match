@@ -1,4 +1,5 @@
 import { variables } from "./variables.js";
+import { cards } from "./variables.js";
 if (variables.registerOpen !== null) {
     variables.registerOpen.onclick = function () {
         variables.registerWindow.classList.toggle("register-visible");
@@ -72,5 +73,17 @@ if (avatar === "default") {
 variables.substrate.onclick = function () {
     variables.substrate.classList.toggle("substrate-hidden");
     variables.registerWindow.classList.remove("register-visible");
-    //variables.resultWindow.classList.remove("result-visible");
+    variables.resultWindow.classList.remove("result-visible");
+};
+export let openResultWindow = () => {
+    if (cards.length === 0) {
+        variables.substrate.classList.remove("substrate-hidden");
+        variables.substrate.classList.toggle("substrate-visible");
+        variables.resultWindow.classList.toggle("result-visible");
+    }
+};
+variables.resultBtn.onclick = function () {
+    variables.resultWindow.classList.remove("result-visible");
+    variables.resultWindow.classList.toggle("result-hidden");
+    variables.substrate.classList.toggle("substrate-hidden");
 };
