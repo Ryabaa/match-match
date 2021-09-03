@@ -51,8 +51,9 @@ function spawnImages(cards, images) {
         addOnclicks(card);
     });
 }
+let getSucces = null;
 let arr = [];
-function check(arr, card) {
+function check(arr, card, getSucces) {
     if (arr[0] !== arr[1]) {
         variables.gameFieldSubstrate.style.display = "unset";
         cards.forEach((card) => {
@@ -68,9 +69,9 @@ function check(arr, card) {
         });
     }
     if (arr[0] == arr[1]) {
-        console.log(arr);
         setTimeout(() => {
             card.succes.style.display = "unset";
+            getSucces();
         }, 1000);
         let index1 = cards.findIndex((n) => n.imageId === arr[0]);
         if (index1 !== -1) {
@@ -86,10 +87,16 @@ function addOnclicks(card) {
     card.cover.onclick = () => {
         card.imageContainer.style.display = "unset";
         card.cover.style.display = "none";
+        let succes = card.succes;
         arr.push(card.imageId);
         if (arr.length === 2) {
-            check(arr, card);
+            check(arr, card, getSucces);
             arr = [];
+        }
+        else {
+            getSucces = () => {
+                succes.style.display = "unset";
+            };
         }
     };
 }

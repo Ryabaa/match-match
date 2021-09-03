@@ -61,8 +61,10 @@ function spawnImages(cards: ICard[], images: IImage[]) {
     });
 }
 
+let getSucces: any = null;
 let arr: number[] = [];
-function check(arr: number[], card: ICard) {
+
+function check(arr: number[], card: ICard, getSucces: any) {
     if (arr[0] !== arr[1]) {
         variables.gameFieldSubstrate.style.display = "unset";
         cards.forEach((card) => {
@@ -78,9 +80,9 @@ function check(arr: number[], card: ICard) {
         });
     }
     if (arr[0] == arr[1]) {
-        console.log(arr);
         setTimeout(() => {
             card.succes!.style.display = "unset";
+            getSucces();
         }, 1000);
         let index1 = cards.findIndex((n) => n.imageId === arr[0]);
         if (index1 !== -1) {
@@ -98,10 +100,15 @@ function addOnclicks(card: ICard) {
     card.cover!.onclick = () => {
         card.imageContainer!.style.display = "unset";
         card.cover!.style.display = "none";
+        let succes = card.succes;
         arr.push(card.imageId!);
         if (arr.length === 2) {
-            check(arr, card);
+            check(arr, card, getSucces);
             arr = [];
+        } else {
+            getSucces = () => {
+                succes!.style.display = "unset";
+            };
         }
     };
 }
