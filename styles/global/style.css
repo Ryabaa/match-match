@@ -342,20 +342,11 @@ body {
 
 .gameImageStateIcon {
   position: absolute;
+  display: none;
   z-index: 2;
   top: 5px;
   right: 5px;
   width: 20px;
-}
-
-.fail,
-.succes {
-  display: none;
-}
-
-.failVis,
-.succesVis {
-  display: unset;
 }
 
 .cardCover {

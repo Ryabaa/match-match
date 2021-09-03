@@ -52,29 +52,25 @@ function spawnImages(cards, images) {
     });
 }
 let arr = [];
-function check(arr) {
+function check(arr, card) {
     if (arr[0] !== arr[1]) {
         variables.gameFieldSubstrate.style.display = "unset";
         cards.forEach((card) => {
             setTimeout(() => {
-                //variables.background!.style.display = "unset";
-                variables.fail.classList.remove("fail");
-                variables.fail.classList.toggle("failVis");
+                card.fail.style.display = "unset";
             }, 1000);
             setTimeout(() => {
                 card.imageContainer.style.display = "none";
                 card.cover.style.display = "unset";
                 variables.gameFieldSubstrate.style.display = "none";
-                //variables.background!.style.display = "none";
-                variables.fail.classList.remove("failVis");
-                variables.fail.classList.toggle("fail");
+                card.fail.style.display = "none";
             }, 2000);
         });
     }
     if (arr[0] == arr[1]) {
+        console.log(arr);
         setTimeout(() => {
-            variables.succes.classList.remove("succes");
-            variables.succes.classList.toggle("succesVis");
+            card.succes.style.display = "unset";
         }, 1000);
         let index1 = cards.findIndex((n) => n.imageId === arr[0]);
         if (index1 !== -1) {
@@ -92,7 +88,7 @@ function addOnclicks(card) {
         card.cover.style.display = "none";
         arr.push(card.imageId);
         if (arr.length === 2) {
-            check(arr);
+            check(arr, card);
             arr = [];
         }
     };
