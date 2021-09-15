@@ -1,36 +1,38 @@
 import { ICard, IImage } from "./interfaces.js";
-import { variables, cards, images } from "./variables.js";
+import { variables, cards, images, changeCards } from "./variables.js";
 import { shuffle } from "./utils.js";
 import { openResultWindow } from "./modals.js";
 
+let gameState = false;
+
 if (variables.gameStateToggler !== null) {
-    // Game state toggler
+    variables.gameStateToggler.onclick = function () {
+        if (gameState === false) {
+            gameState = true;
+            startGame();
+        } else {
+            gameState = false;
+            variables.gameFieldSubstrate.style.display = "unset";
+            stopGame();
+        }
+        if (gameState === true) {
+            variables.gameStateText.textContent = "Stop";
+        } else {
+            variables.gameStateText.textContent = "Start";
+        }
+    };
 }
 
-let gameState = "not active";
-
-variables.gameStateToggler.onclick = function () {
-    if (gameState === "not active") {
-        gameState = "active";
-    } else {
-        gameState = "not active";
-    }
-    if (gameState === "active") {
-        variables.gameStateText.textContent = "Stop";
-    } else {
-        variables.gameStateText.textContent = "Start";
-    }
-    //StartStop();
-};
-
 //--------------------ClockTimer---------------//
+let timer: any = null;
+let time: string = "";
+let sec: any = "00";
+let min: any = "00";
 
 function clocktimer() {
-    let sec: any = "00";
-    let min: any = "00";
-    let time: any = `${min}:${sec}`;
-
-    setInterval(function () {
+    sec = "00";
+    min = "00";
+    timer = setInterval(function () {
         sec = +sec + 1;
         if (sec < 10) {
             sec = "0" + sec;
@@ -45,15 +47,40 @@ function clocktimer() {
         }
         variables.seconds.innerText = sec;
         variables.minutes.innerText = min;
+        time = `${min}:${sec}`;
     }, 1000);
 }
 
 //------------Game----------------//
 
-window.onload = function () {
+function startGame() {
     spawnImages(cards, shuffle(images));
     clocktimer();
-};
+    variables.gameFieldSubstrate.style.display = "none";
+}
+
+function stopGame() {
+    changeCards();
+    clearCards(cards);
+    clearTimeout(timer);
+    sec = "00";
+    min = "00";
+    variables.seconds.innerText = sec;
+    variables.minutes.innerText = min;
+}
+
+function clearCards(cards: ICard[]) {
+    cards.forEach((card, i) => {
+        card.fail!.style.display = "none";
+        card.failCover!.style.display = "none";
+        card.imageContainer!.style.display = "none";
+        card.cover!.style.display = "unset";
+        card.fail!.style.display = "none";
+        card.failCover!.style.display = "none";
+        card.succes!.style.display = "none";
+        card.succesCover!.style.display = "none";
+    });
+}
 
 function spawnImages(cards: ICard[], images: IImage[]) {
     cards.forEach((card, i) => {
@@ -89,6 +116,7 @@ function check(arr: number[], card: ICard, getSucces: any) {
             card.succesCover!.style.display = "unset";
             getSucces();
             if (cards.length === 0) {
+                variables.resultTime.innerHTML = time;
                 openResultWindow();
             }
         }, 1000);
@@ -106,6 +134,7 @@ function check(arr: number[], card: ICard, getSucces: any) {
 
 function addOnclicks(card: ICard) {
     card.cover!.onclick = () => {
+        console.log(cards);
         card.imageContainer!.style.display = "unset";
         card.cover!.style.display = "none";
         let succes = card.succes;

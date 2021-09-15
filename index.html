@@ -161,7 +161,7 @@
             <div class="register-body">
                 <div class="register-container">
                     <div class="register-card">
-                        <h3 class="register-card__title">First Name</h3>
+                        <h3 class="register-card__title">Name</h3>
                         <p class="register-card__error-text" id="registerErrText_1"></p>
                         <input type="text" id="registerInput_1" class="register-card__input" />
                         <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_1" />
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                     <div class="register-card">
-                        <h3 class="register-card__title">Last Name</h3>
+                        <h3 class="register-card__title">Password</h3>
                         <p class="register-card__error-text" id="registerErrText_2"></p>
                         <input type="text" id="registerInput_2" class="register-card__input" />
                         <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_2" />
@@ -191,6 +191,7 @@
                 <div class="register-avatar">
                     <input type="file" id="registerAvatar" accept="image/jpeg,image/png" class="register-avatar__input registerAvatar" />
                     <label for="registerAvatar">
+                        <p class="register-avatar__text">Select your avatar</p>
                         <div class="register-avatar__icon" id="registerNoAvatar"></div>
                         <img class="register-avatar__user-img" src="" id="registerUserAvatar" />
                     </label>
@@ -203,10 +204,12 @@
         </section>
 
         <section id="resultWindow" class="result">
-            <p class="result-text">Congratulations! You successfully found all matches on <span id="resultTime"></span> minutes.</p>
+            <p id="resultTime1" class="result-time">00:00</p>
+            <p class="result-text">Congratulations! You successfully found all matches on <span id="resultTime2" class="result-text__span">00:00</span> minutes.</p>
             <button class="result-btn" id="resultBtn">OK</button>
         </section>
 
+        <script type="text/javascript" src="./assets/storage.json"></script>
         <script type="module" src="./ts-built/script.js"></script>
         <script type="module" src="./ts-built/modals.js"></script>
         <script type="module" src="./ts-built/variables.js"></script>

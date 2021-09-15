@@ -1,5 +1,4 @@
-import { variables } from "./variables.js";
-import { cards } from "./variables.js";
+import { cards, variables } from "./variables.js";
 if (variables.registerOpen !== null) {
     variables.registerOpen.onclick = function () {
         variables.registerWindow.classList.toggle("register-visible");
@@ -49,6 +48,9 @@ variables.registerAdd.onclick = function () {
         variables.gameStateToggler.style.display = "unset";
         variables.headerAvatar.style.display = "unset";
         variables.registerOpen.style.display = "none";
+        localStorage.setItem("username", JSON.stringify(variables.registerInput_1.value));
+        localStorage.setItem("password", JSON.stringify(variables.registerInput_2.value));
+        localStorage.setItem("email", JSON.stringify(variables.registerInput_3.value));
     }
 };
 variables.registerCancel.onclick = function () {

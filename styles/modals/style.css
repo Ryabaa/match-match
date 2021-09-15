@@ -168,17 +168,28 @@ input {
   height: 18px;
 }
 
+.register-avatar__text {
+  text-align: center;
+  font-weight: 500;
+  font-family: Roboto;
+  font-size: 1.1rem;
+  padding-top: 20px;
+  letter-spacing: 0.4px;
+  color: #00000061;
+}
+
 .register-avatar__icon {
   border-radius: 100px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   width: 198px;
   height: 198px;
-  background: center no-repeat url(../../assets/icons/no-avatar.svg);
+  cursor: pointer;
+  background: center no-repeat url(../../assets/icons/add-avatar.svg);
 }
 
 .register-avatar__icon:hover {
-  background: center no-repeat url(../../assets/icons/add-avatar.svg);
+  background: center no-repeat url(../../assets/icons/no-avatar.svg);
 }
 
 .register-avatar__user-img {
@@ -282,7 +293,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   max-width: 360px;
-  min-height: 130px;
+  min-height: 190px;
   padding: 20px 30px;
   visibility: hidden;
   position: fixed;
@@ -302,7 +313,25 @@ input {
   margin: 0;
 }
 
+.result-time {
+  font-family: Roboto;
+  font-size: 26px;
+  letter-spacing: 0.25px;
+  color: #2196f3;
+  font-weight: 700;
+  text-align: center;
+}
+
 .result-text {
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #00000099;
+  font-weight: 500;
+}
+
+.result-text__span {
   font-family: Roboto;
   font-size: 14px;
   line-height: 20px;

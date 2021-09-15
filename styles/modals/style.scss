@@ -127,14 +127,24 @@ input {
         }
     }
     &-avatar {
+        &__text {
+            text-align: center;
+            font-weight: 500;
+            font-family: Roboto;
+            font-size: 1.1rem;
+            padding-top: 20px;
+            letter-spacing: 0.4px;
+            color: #00000061;
+        }
         &__icon {
             border-radius: 100px;
             @include slowTrans();
             width: 198px;
             height: 198px;
-            background: center no-repeat url(../../assets/icons/no-avatar.svg);
+            cursor: pointer;
+            background: center no-repeat url(../../assets/icons/add-avatar.svg);
             &:hover {
-                background: center no-repeat url(../../assets/icons/add-avatar.svg);
+                background: center no-repeat url(../../assets/icons/no-avatar.svg);
             }
         }
         &__user-img {
@@ -210,7 +220,7 @@ input {
     justify-content: space-between;
     align-items: center;
     max-width: 360px;
-    min-height: 130px;
+    min-height: 190px;
     padding: 20px 30px;
     visibility: hidden;
     position: fixed;
@@ -225,6 +235,14 @@ input {
         visibility: visible;
         margin: 0;
     }
+    &-time {
+        font-family: Roboto;
+        font-size: 26px;
+        letter-spacing: 0.25px;
+        color: $primary;
+        font-weight: 700;
+        text-align: center;
+    }
     &-text {
         font-family: Roboto;
         font-size: 14px;
@@ -232,6 +250,14 @@ input {
         letter-spacing: 0.25px;
         color: #00000099;
         font-weight: 500;
+        &__span {
+            font-family: Roboto;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            color: #00000099;
+            font-weight: 500;
+        }
     }
     &-btn {
         width: 100px;

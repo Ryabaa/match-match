@@ -192,6 +192,10 @@ body {
         grid-template-rows: repeat(3, auto);
         gap: 20px;
         border-radius: 5px;
+        @include slowTrans();
+        &__shuffle {
+            transform: rotate(360deg);
+        }
         &__container {
             cursor: pointer;
             user-select: none;
@@ -238,7 +242,7 @@ body {
 }
 
 #gameFieldSubstrate {
-    display: none;
+    display: unset;
     position: fixed;
     width: 100%;
     height: 100%;
