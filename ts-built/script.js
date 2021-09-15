@@ -61,6 +61,7 @@ function stopGame() {
     variables.seconds.innerText = sec;
     variables.minutes.innerText = min;
 }
+export { stopGame };
 function clearCards(cards) {
     cards.forEach((card, i) => {
         card.fail.style.display = "none";
@@ -89,14 +90,14 @@ function check(arr, card, getSucces) {
             setTimeout(() => {
                 card.fail.style.display = "unset";
                 card.failCover.style.display = "unset";
-            }, 1000);
+            }, 700);
             setTimeout(() => {
                 card.imageContainer.style.display = "none";
                 card.cover.style.display = "unset";
                 card.fail.style.display = "none";
                 card.failCover.style.display = "none";
                 variables.gameFieldSubstrate.style.display = "none";
-            }, 2000);
+            }, 1500);
         });
     }
     if (arr[0] == arr[1]) {
@@ -105,7 +106,9 @@ function check(arr, card, getSucces) {
             card.succesCover.style.display = "unset";
             getSucces();
             if (cards.length === 0) {
-                variables.resultTime.innerHTML = time;
+                variables.resultTime1.innerHTML = time;
+                variables.resultTime2.innerHTML = time;
+                clearTimeout(timer);
                 openResultWindow();
             }
         }, 1000);
@@ -121,7 +124,6 @@ function check(arr, card, getSucces) {
 }
 function addOnclicks(card) {
     card.cover.onclick = () => {
-        console.log(cards);
         card.imageContainer.style.display = "unset";
         card.cover.style.display = "none";
         let succes = card.succes;

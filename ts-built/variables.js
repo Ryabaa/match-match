@@ -3,6 +3,7 @@ export let variables = {
     gameStateText: document.getElementById("gameStateText"),
     headerAvatar: document.getElementById("headerAvatar"),
     substrate: document.getElementById("substrate"),
+    substrate2: document.getElementById("substrate2"),
     minutes: document.getElementById("minutes"),
     seconds: document.getElementById("seconds"),
     registerWindow: document.getElementById("registerWindow"),
@@ -24,7 +25,8 @@ export let variables = {
     gameFieldSubstrate: document.getElementById("gameFieldSubstrate"),
     resultWindow: document.getElementById("resultWindow"),
     resultBtn: document.getElementById("resultBtn"),
-    resultTime: document.getElementById("resultTime"),
+    resultTime1: document.getElementById("resultTime1"),
+    resultTime2: document.getElementById("resultTime2"),
     gameField: document.getElementById("game-field"),
 };
 export let cards = [

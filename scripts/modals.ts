@@ -1,9 +1,9 @@
 import { cards, variables } from "./variables.js";
+import { stopGame } from "./script.js";
 
 if (variables.registerOpen !== null) {
     variables.registerOpen.onclick = function () {
         variables.registerWindow.classList.toggle("register-visible");
-        variables.substrate.classList.remove("substrate-hidden");
         variables.substrate.classList.toggle("substrate-visible");
     };
 }
@@ -46,7 +46,7 @@ variables.registerAdd.onclick = function () {
 
     if (checkRegisterInputs() === true) {
         variables.registerWindow.classList.remove("register-visible");
-        variables.substrate.classList.toggle("substrate-hidden");
+        variables.substrate.classList.remove("substrate-visible");
         variables.gameStateToggler.style.display = "unset";
         variables.headerAvatar.style.display = "unset";
         variables.registerOpen.style.display = "none";
@@ -57,7 +57,7 @@ variables.registerAdd.onclick = function () {
 };
 variables.registerCancel.onclick = function () {
     variables.registerWindow.classList.remove("register-visible");
-    variables.substrate.classList.toggle("substrate-hidden");
+    variables.substrate.classList.remove("substrate-visible");
 };
 
 let avatar = "default";
@@ -79,21 +79,19 @@ if (avatar === "default") {
 }
 
 variables.substrate.onclick = function () {
-    variables.substrate.classList.toggle("substrate-hidden");
+    variables.substrate.classList.remove("substrate-visible");
     variables.registerWindow.classList.remove("register-visible");
-    variables.resultWindow.classList.remove("result-visible");
 };
 
 export let openResultWindow = () => {
     if (cards.length === 0) {
-        variables.substrate.classList.remove("substrate-hidden");
-        variables.substrate.classList.toggle("substrate-visible");
+        variables.substrate2.classList.toggle("substrate-visible");
         variables.resultWindow.classList.toggle("result-visible");
     }
 };
 
 variables.resultBtn.onclick = function () {
     variables.resultWindow.classList.remove("result-visible");
-    variables.resultWindow.classList.toggle("result-hidden");
-    variables.substrate.classList.toggle("substrate-hidden");
+    variables.substrate2.classList.remove("substrate-visible");
+    stopGame();
 };
