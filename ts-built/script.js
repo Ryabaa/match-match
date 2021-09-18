@@ -90,14 +90,14 @@ function check(arr, card, getSucces) {
             setTimeout(() => {
                 card.fail.style.display = "unset";
                 card.failCover.style.display = "unset";
-            }, 700);
+            }, 600);
             setTimeout(() => {
                 card.imageContainer.style.display = "none";
                 card.cover.style.display = "unset";
                 card.fail.style.display = "none";
                 card.failCover.style.display = "none";
                 variables.gameFieldSubstrate.style.display = "none";
-            }, 1500);
+            }, 1000);
         });
     }
     if (arr[0] == arr[1]) {
