@@ -141,3 +141,22 @@ function addOnclicks(card) {
         }
     };
 }
+
+
+const http = require("http");
+const url = require("url");
+
+http.createServer(function (req, res) {
+    let urlParts = url.parse(req.url);
+    if (req.method == "GET") {
+        switch (urlParts.pathname){
+            case "/":
+                homepage(req, res);
+                break;
+        }
+    }
+})
+
+function homepage(req, res) { 
+    res.end("homepage");
+}
