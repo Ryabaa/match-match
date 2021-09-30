@@ -1,13 +1,11 @@
-/* import { Router } from "https://unpkg.com/@vaadin/router";
+import Navigo from 'navigo'; 
 
-const outlet = document.getElementById("outlet");
-const router = new Router(outlet);
-router.setRoutes([
-    { path: "/", component: "x-home-view" },
-    { path: "/users", component: "x-user-list" },
-    { path: "/users/:user", component: "x-user-profile" },
-]); */
+const router = new Navigo('/');
 
+router.on('/settings', function () {
+    console.log(1);
+});
 
+router.resolve();
 
-//потом надо чета придумать 
+//router.navigate('/about');

@@ -95,7 +95,7 @@ input {
 .register-card {
   display: -ms-grid;
   display: grid;
-  height: 56px;
+  min-height: 56px;
   -ms-grid-columns: (auto)[2];
       grid-template-columns: repeat(2, auto);
   -ms-grid-rows: (auto)[2];
@@ -168,11 +168,19 @@ input {
   height: 18px;
 }
 
+.register-card__errText {
+  background: #c5202025;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  color: #bb1818;
+}
+
 .register-avatar__text {
   text-align: center;
   font-weight: 500;
   font-family: Roboto;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding-top: 20px;
   letter-spacing: 0.4px;
   color: #00000061;

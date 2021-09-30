@@ -118,6 +118,7 @@ function check(arr: number[], card: ICard, getSucces: any) {
             card.succesCover!.style.display = "unset";
             getSucces();
             if (cards.length === 0) {
+                variables.resultName.innerHTML = localStorage.getItem("name");
                 variables.resultTime1.innerHTML = time;
                 variables.resultTime2.innerHTML = time;
                 clearTimeout(timer);

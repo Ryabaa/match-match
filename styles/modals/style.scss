@@ -79,7 +79,7 @@ input {
     }
     &-card {
         display: grid;
-        height: 56px;
+        min-height: 56px;
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(2, auto);
         border-radius: 4px 4px 0px 0px;
@@ -125,13 +125,18 @@ input {
                 }
             }
         }
+        &__errText {
+            background: #c5202025;
+            grid-column: 1 / 2;
+            color: rgb(187, 24, 24);
+        }
     }
     &-avatar {
         &__text {
             text-align: center;
             font-weight: 500;
             font-family: Roboto;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             padding-top: 20px;
             letter-spacing: 0.4px;
             color: #00000061;

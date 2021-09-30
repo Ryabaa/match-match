@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <div class="register-card">
-                        <h3 class="register-card__title">Password</h3>
+                        <h3 class="register-card__title">Last Name</h3>
                         <p class="register-card__error-text" id="registerErrText_2"></p>
                         <input type="text" id="registerInput_2" class="register-card__input" />
                         <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_2" />
@@ -183,6 +183,7 @@
                         <h3 class="register-card__title">E-mail</h3>
                         <p class="register-card__error-text" id="registerErrText_3"></p>
                         <input type="text" id="registerInput_3" class="register-card__input" />
+                        <p class="register-card__errText" id="registerErrText"></p>
                         <img src="./assets/icons/check.svg" class="register-card__icon" id="registerIconCheck_3" />
                         <div class="register-card__icon register-card__icon-error" id="registerIconErr_3">
                             <img src="./assets/icons/error.png" />
@@ -206,10 +207,13 @@
 
         <section id="resultWindow" class="result">
             <p id="resultTime1" class="result-time">00:00</p>
-            <p class="result-text">Congratulations! You successfully found all matches on <span id="resultTime2" class="result-text__span">00:00</span> minutes.</p>
+            <p class="result-text">
+                <span id="resultName" class="result-text"></span>, congratulations! You successfully found all matches on <span id="resultTime2" class="result-text__span">00:00</span> minutes.
+            </p>
             <button class="result-btn" id="resultBtn">OK</button>
         </section>
 
+        <script type="module" src="./scripts/router.js"></script>
         <script type="module" src="./ts-built/script.js"></script>
         <script type="module" src="./ts-built/modals.js"></script>
         <script type="module" src="./ts-built/variables.js"></script>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Match-Match Game</title>
+        <link rel="shortcut icon" href="/favicon.7519aa1b.svg" type="image/x-icon">
+        <link rel="stylesheet" href="/style.8e68b2ea.css">
+        <link rel="stylesheet" href="/style.47df342a.css">
+    <script src="/style.8e68b2ea.js"></script><script src="/style.47df342a.js"></script></head>
+    <body>
+        <div id="substrate" class="substrate"></div>
+        <div id="substrate2" class="substrate"></div>
+
+        <header class="header">
+            <div class="header-logo">
+                <div class="header-logo__container">
+                    <h2 class="header-logo__text">Match</h2>
+                </div>
+                <div class="header-logo__container">
+                    <h2 class="header-logo__text">Match</h2>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <button class="header-nav__container">
+                    <div class="header-nav__container-substrate"></div>
+                    <div class="header-nav__container-card">
+                        <img src="/question.e37336f8.svg">
+                    </div>
+                    <p class="header-nav__container-text">About Game</p>
+                </button>
+                <button class="header-nav__container">
+                    <img src="/star.2889961f.svg">
+                    <p class="header-nav__container-text">Best Score</p>
+                </button>
+                <button class="header-nav__container">
+                    <img src="/settings.5e94493e.svg">
+                    <p class="header-nav__container-text">Game Settings</p>
+                </button>
+            </nav>
+            <div class="header-container">
+                <button id="gameStateToggler" class="header-container__btn header-container__start-btn"><span id="gameStateText">Start</span> game</button>
+                <img src="" class="header-container__avatar" id="headerAvatar">
+                <button id="registerOpen" class="header-container__btn header-container__register-btn">register new player</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="game">
+                <div id="gameFieldSubstrate"></div>
+                <div class="game-time">
+                    <div id="minutes">00</div>
+                    :
+                    <div id="seconds">00</div>
+                </div>
+                <div class="game-field">
+                    <div class="game-field__container" id="gameContainer_1">
+                        <div class="game-field__container-image" id="gameImage_1"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover1"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover1"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail1" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes1" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_1" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_2">
+                        <div class="game-field__container-image" id="gameImage_2"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover2"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover2"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail2" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes2" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_2" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_3">
+                        <div class="game-field__container-image" id="gameImage_3"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover3"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover3"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail3" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes3" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_3" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_4">
+                        <div class="game-field__container-image" id="gameImage_4"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover4"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover4"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail4" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes4" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_4" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_5">
+                        <div class="game-field__container-image" id="gameImage_5"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover5"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover5"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail5" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes5" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_5" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_6">
+                        <div class="game-field__container-image" id="gameImage_6"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover6"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover6"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail6" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes6" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_6" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_7">
+                        <div class="game-field__container-image" id="gameImage_7"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover7"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover7"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail7" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes7" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_7" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_8">
+                        <div class="game-field__container-image" id="gameImage_8"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover8"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover8"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail8" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes8" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_8" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_9">
+                        <div class="game-field__container-image" id="gameImage_9"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover9"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover9"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail9" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes9" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_9" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_10">
+                        <div class="game-field__container-image" id="gameImage_10"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover10"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover10"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail10" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes10" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_10" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_11">
+                        <div class="game-field__container-image" id="gameImage_11"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover11"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover11"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail11" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes11" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_11" src="/card-top.18aa3738.png">
+                    </div>
+                    <div class="game-field__container" id="gameContainer_12">
+                        <div class="game-field__container-image" id="gameImage_12"></div>
+                        <div class="game-field__container-background game-field__container-backgroundRed" id="failCover12"></div>
+                        <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover12"></div>
+                        <img src="/cross.fcab1a7e.png" alt="" id="fail12" class="failHide gameImageStateIcon">
+                        <img src="/check.7da8172a.png" alt="" id="succes12" class="succesHide gameImageStateIcon">
+                        <img class="cardCover" id="backsideCard_12" src="/card-top.18aa3738.png">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="registerWindow" class="register">
+            <div class="register-header">
+                <h2 class="register-header__title">Register new Player</h2>
+            </div>
+            <div class="register-body">
+                <div class="register-container">
+                    <div class="register-card">
+                        <h3 class="register-card__title">Name</h3>
+                        <p class="register-card__error-text" id="registerErrText_1"></p>
+                        <input type="text" id="registerInput_1" class="register-card__input">
+                        <img src="/check.db403875.svg" class="register-card__icon" id="registerIconCheck_1">
+                        <div class="register-card__icon register-card__icon-error" id="registerIconErr_1">
+                            <img src="/error.64b0d2fc.png">
+                        </div>
+                    </div>
+                    <div class="register-card">
+                        <h3 class="register-card__title">Last Name</h3>
+                        <p class="register-card__error-text" id="registerErrText_2"></p>
+                        <input type="text" id="registerInput_2" class="register-card__input">
+                        <img src="/check.db403875.svg" class="register-card__icon" id="registerIconCheck_2">
+                        <div class="register-card__icon register-card__icon-error" id="registerIconErr_2">
+                            <img src="/error.64b0d2fc.png">
+                        </div>
+                    </div>
+                    <div class="register-card">
+                        <h3 class="register-card__title">E-mail</h3>
+                        <p class="register-card__error-text" id="registerErrText_3"></p>
+                        <input type="text" id="registerInput_3" class="register-card__input">
+                        <p class="register-card__errText" id="registerErrText"></p>
+                        <img src="/check.db403875.svg" class="register-card__icon" id="registerIconCheck_3">
+                        <div class="register-card__icon register-card__icon-error" id="registerIconErr_3">
+                            <img src="/error.64b0d2fc.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="register-avatar">
+                    <input type="file" id="registerAvatar" accept="image/jpeg,image/png" class="register-avatar__input registerAvatar">
+                    <label for="registerAvatar">
+                        <p class="register-avatar__text">Select your avatar</p>
+                        <div class="register-avatar__icon" id="registerNoAvatar"></div>
+                        <img class="register-avatar__user-img" src="" id="registerUserAvatar">
+                    </label>
+                </div>
+            </div>
+            <div class="register-footer">
+                <button class="register-footer__btn" id="registerAdd">Add user</button>
+                <button class="register-footer__btn" id="registerCancel">Cancel</button>
+            </div>
+        </section>
+
+        <section id="resultWindow" class="result">
+            <p id="resultTime1" class="result-time">00:00</p>
+            <p class="result-text">
+                <span id="resultName" class="result-text"></span>, congratulations! You successfully found all matches on <span id="resultTime2" class="result-text__span">00:00</span> minutes.
+            </p>
+            <button class="result-btn" id="resultBtn">OK</button>
+        </section>
+
+        <script type="module" src="/router.0a25f5e8.js"></script>
+        <script type="module" src="/script.ca83b924.js"></script>
+        <script type="module" src="/modals.ea35c063.js"></script>
+        <script type="module" src="/variables.28dc10af.js"></script>
+    </body>
+</html>
