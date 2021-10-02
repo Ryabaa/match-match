@@ -30,6 +30,7 @@ export let variables = {
     resultTime1: document.getElementById("resultTime1"),
     resultTime2: document.getElementById("resultTime2"),
     gameField: document.getElementById("game-field"),
+    main: document.getElementById("main"),
 };
 export let cards = [
     {

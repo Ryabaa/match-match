@@ -156,7 +156,8 @@ var variables = {
   resultBtn: document.getElementById("resultBtn"),
   resultTime1: document.getElementById("resultTime1"),
   resultTime2: document.getElementById("resultTime2"),
-  gameField: document.getElementById("game-field")
+  gameField: document.getElementById("game-field"),
+  main: document.getElementById("main")
 };
 exports.variables = variables;
 var cards = [{
@@ -426,7 +427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63601" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
