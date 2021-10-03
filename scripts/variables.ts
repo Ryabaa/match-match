@@ -33,6 +33,7 @@ export let variables: any = {
     resultTime2: document.getElementById("resultTime2"),
     gameField: document.getElementById("game-field"),
     main: document.getElementById("main"),
+    game: document.getElementById("game"),
 };
 
 export let cards: ICard[] = [

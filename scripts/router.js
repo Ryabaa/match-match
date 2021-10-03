@@ -1,27 +1,23 @@
-import Navigo from 'navigo';
 import { variables } from '../ts-built/variables.js'
 import { pages } from './pages.js'
 
-const router = new Navigo('/');
+switch (location.pathname) {
+    case '/game':
+            variables.main.innerHTML = pages.game
+        break;
 
-router.on('/game', function () {
-    variables.main.innerHTML = pages.game
-});
+    case '/about':
+            variables.main.innerHTML = 'about'
+        break;
 
-router.on('/about', function () {
-    variables.main.innerHTML = 'about'
-});
+    case '/score':
+            variables.main.innerHTML = 'score'
+        break;
 
-router.on('/settings', function () {
-    variables.main.innerHTML = 'settings'
-});
+    case '/settings':
+            variables.main.innerHTML = 'settings'
+        break;
 
-router.on('/score', function () {
-    variables.main.innerHTML = 'score'
-});
-
-
-
-router.resolve();
-
-router.navigate('/about')
+    default:
+        location.pathname = '/game'
+}

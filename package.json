@@ -4,7 +4,9 @@
   "main": "./ts-built/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "lite-server",
+    "dev": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir=build"
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,8 @@
   },
   "homepage": "https://github.com/Ryabaa/match-match#readme",
   "devDependencies": {
-    "@types/node": "^16.10.2",
     "lite-server": "^2.6.1",
     "typescript": "^4.4.3"
-  },
-  "dependencies": {
-    "navigo": "^8.11.1"
   },
   "keywords": [],
   "description": ""
