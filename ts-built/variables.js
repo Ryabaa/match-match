@@ -31,7 +31,10 @@ export let variables = {
     resultTime2: document.getElementById("resultTime2"),
     gameField: document.getElementById("game-field"),
     main: document.getElementById("main"),
-    game: document.getElementById("game"),
+    navLinkGame: document.getElementById("navLinkGame"),
+    navLinkAbout: document.getElementById("navLinkAbout"),
+    navLinkScore: document.getElementById("navLinkScore"),
+    navLinkSettings: document.getElementById("navLinkSettings"),
 };
 export let cards = [
     {

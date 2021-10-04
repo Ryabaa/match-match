@@ -121,6 +121,12 @@ body {
   height: 100%;
   row-gap: 10px;
   width: 100px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header-nav__container:hover {
+  background-color: #2f80ed;
 }
 
 .header-nav__container-substrate {

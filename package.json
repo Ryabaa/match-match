@@ -4,9 +4,7 @@
   "main": "./ts-built/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server",
-    "dev": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir=build"
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",

@@ -105,5 +105,11 @@ export let pages = {
                     <img class="cardCover" id="backsideCard_12" src="../assets/images/card-top.png" />
                 </div>
             </div>
-        </section>`
+        </section>`,
+    about:
+        ``,
+    score:
+        ``,
+    settings:
+        ``
 }

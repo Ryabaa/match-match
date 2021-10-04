@@ -88,6 +88,10 @@ body {
             height: 100%;
             row-gap: 10px;
             width: 100px;
+            @include slowTrans();
+            &:hover {
+                background-color: #2f80ed;
+            }
             &-substrate {
                 position: absolute;
                 z-index: 0;
