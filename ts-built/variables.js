@@ -31,6 +31,7 @@ export let variables = {
     resultTime2: document.getElementById("resultTime2"),
     gameField: document.getElementById("game-field"),
     main: document.getElementById("main"),
+    canvas: document.getElementById("canvas"),
     navLinkGame: document.getElementById("navLinkGame"),
     navLinkAbout: document.getElementById("navLinkAbout"),
     navLinkScore: document.getElementById("navLinkScore"),
