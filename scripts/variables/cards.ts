@@ -1,44 +1,12 @@
-import { ICard, IImage } from "./interfaces";
-
-export let variables: any = {
-    gameStateToggler: document.getElementById("gameStateToggler"),
-    gameStateText: document.getElementById("gameStateText"),
-    headerAvatar: document.getElementById("headerAvatar"),
-    substrate: document.getElementById("substrate"),
-    substrate2: document.getElementById("substrate2"),
-    minutes: document.getElementById("minutes"),
-    seconds: document.getElementById("seconds"),
-    registerWindow: document.getElementById("registerWindow"),
-    registerOpen: document.getElementById("registerOpen"),
-    registerErrText: document.getElementById("registerErrText"),
-    registerInput_1: document.getElementById("registerInput_1"),
-    registerInput_2: document.getElementById("registerInput_2"),
-    registerInput_3: document.getElementById("registerInput_3"),
-    registerIconCheck_1: document.getElementById("registerIconCheck_1"),
-    registerIconCheck_2: document.getElementById("registerIconCheck_2"),
-    registerIconCheck_3: document.getElementById("registerIconCheck_3"),
-    registerIconErr_1: document.getElementById("registerIconErr_1"),
-    registerIconErr_2: document.getElementById("registerIconErr_2"),
-    registerIconErr_3: document.getElementById("registerIconErr_3"),
-    registerAvatar: document.getElementById("registerAvatar"),
-    registerNoAvatar: document.getElementById("registerNoAvatar"),
-    registerUserAvatar: document.getElementById("registerUserAvatar"),
-    registerAdd: document.getElementById("registerAdd"),
-    registerCancel: document.getElementById("registerCancel"),
-    gameFieldSubstrate: document.getElementById("gameFieldSubstrate"),
-    resultWindow: document.getElementById("resultWindow"),
-    resultName: document.getElementById("resultName"),
-    resultBtn: document.getElementById("resultBtn"),
-    resultTime1: document.getElementById("resultTime1"),
-    resultTime2: document.getElementById("resultTime2"),
-    gameField: document.getElementById("game-field"),
-    main: document.getElementById("main"),
-    canvas: document.getElementById("canvas"),
-    navLinkGame: document.getElementById("navLinkGame"),
-    navLinkAbout: document.getElementById("navLinkAbout"),
-    navLinkScore: document.getElementById("navLinkScore"),
-    navLinkSettings: document.getElementById("navLinkSettings"),
-};
+export interface ICard {
+    imageContainer: HTMLElement | null;
+    cover: HTMLElement | null;
+    succes: HTMLElement | null;
+    fail: HTMLElement | null;
+    succesCover: HTMLElement | null;
+    failCover: HTMLElement | null;
+    imageId: number | null;
+}
 
 export let cards: ICard[] = [
     {
@@ -262,23 +230,6 @@ export let cardsDefault = [
     },
 ];
 
-function changeCards() {
+export function resetCards() {
     return (cards = cardsDefault);
 }
-
-export { changeCards };
-
-export let images: IImage[] = [
-    { image: `<img class="game-field__container-image" src="./assets/images/elephant.png" />`, id: 1 },
-    { image: `<img class="game-field__container-image" src="./assets/images/elephant.png" />`, id: 1 },
-    { image: `<img class="game-field__container-image" src="./assets/images/bird.png" />`, id: 2 },
-    { image: `<img class="game-field__container-image" src="./assets/images/bird.png" />`, id: 2 },
-    { image: `<img class="game-field__container-image" src="./assets/images/wolf.png" />`, id: 3 },
-    { image: `<img class="game-field__container-image" src="./assets/images/wolf.png" />`, id: 3 },
-    { image: `<img class="game-field__container-image" src="./assets/images/lion.png" />`, id: 4 },
-    { image: `<img class="game-field__container-image" src="./assets/images/lion.png" />`, id: 4 },
-    { image: `<img class="game-field__container-image" src="./assets/images/tiger.png" />`, id: 5 },
-    { image: `<img class="game-field__container-image" src="./assets/images/tiger.png" />`, id: 5 },
-    { image: `<img class="game-field__container-image" src="./assets/images/pinguin.png" />`, id: 6 },
-    { image: `<img class="game-field__container-image" src="./assets/images/pinguin.png" />`, id: 6 },
-];

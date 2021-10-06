@@ -1,23 +1,24 @@
-import { ICard, IImage } from "./interfaces.js";
-import { variables, cards, images, changeCards } from "./variables.js";
 import { shuffle } from "./utils.js";
 import { openResultWindow } from "./modals.js";
+import { cards, game, images, resetCards, result, global } from "./variables/index.js";
+import { ICard } from "./variables/cards.js";
+import { IImage } from "./variables/images.js";
 
 let gameState = false;
 
-variables.gameStateToggler.onclick = function () {
+global.stateToggler!.onclick = function () {
     if (gameState === false) {
         gameState = true;
         startGame();
     } else {
         gameState = false;
-        variables.gameFieldSubstrate.style.display = "unset";
+        game.fieldSubstrate!.style.display = "unset";
         stopGame();
     }
     if (gameState === true) {
-        variables.gameStateText.textContent = "Stop";
+        global.stateText!.textContent = "Stop";
     } else {
-        variables.gameStateText.textContent = "Start";
+        global.stateText!.textContent = "Start";
     }
 };
 
@@ -45,8 +46,8 @@ function clocktimer() {
                 min = "0" + min;
             }
         }
-        variables.seconds.innerText = sec;
-        variables.minutes.innerText = min;
+        game.seconds!.innerText = sec;
+        game.minutes!.innerText = min;
         time = `${min}:${sec}`;
     }, 1000);
 }
@@ -56,17 +57,17 @@ function clocktimer() {
 function startGame() {
     spawnImages(cards, shuffle(images));
     clocktimer();
-    variables.gameFieldSubstrate.style.display = "none";
+    game.fieldSubstrate!.style.display = "none";
 }
 
 function stopGame() {
-    changeCards();
+    resetCards();
     clearCards(cards);
     clearTimeout(timer);
     sec = "00";
     min = "00";
-    variables.seconds.innerText = sec;
-    variables.minutes.innerText = min;
+    game.seconds!.innerText = sec;
+    game.minutes!.innerText = min;
 }
 
 function clearCards(cards: ICard[]) {
@@ -95,8 +96,8 @@ let arr: number[] = [];
 
 function check(arr: number[], card: ICard, getSucces: any) {
     if (arr[0] !== arr[1]) {
-        variables.gameFieldSubstrate.style.display = "unset";
-        cards.forEach((card) => {
+        game.fieldSubstrate!.style.display = "unset";
+        cards.forEach((card: ICard) => {
             setTimeout(() => {
                 card.fail!.style.display = "unset";
                 card.failCover!.style.display = "unset";
@@ -106,7 +107,7 @@ function check(arr: number[], card: ICard, getSucces: any) {
                 card.cover!.style.display = "unset";
                 card.fail!.style.display = "none";
                 card.failCover!.style.display = "none";
-                variables.gameFieldSubstrate.style.display = "none";
+                game.fieldSubstrate!.style.display = "none";
             }, 1500);
         });
     }
@@ -116,19 +117,19 @@ function check(arr: number[], card: ICard, getSucces: any) {
             card.succesCover!.style.display = "unset";
             getSucces();
             if (cards.length === 0) {
-                variables.resultName.innerHTML = localStorage.getItem("name");
-                variables.resultTime1.innerHTML = time;
-                variables.resultTime2.innerHTML = time;
+                result.name!.innerHTML = localStorage.getItem("name") || "";
+                result.time1!.innerHTML = time;
+                result.time2!.innerHTML = time;
                 clearTimeout(timer);
                 openResultWindow();
             }
         }, 1000);
-        let index1 = cards.findIndex((n) => n.imageId === arr[0]);
+        let index1 = cards.findIndex((card: ICard) => card.imageId === arr[0]);
         if (index1 !== -1) {
             cards.splice(index1, 1);
         }
 
-        let index2 = cards.findIndex((n) => n.imageId === arr[1]);
+        let index2 = cards.findIndex((card: ICard) => card.imageId === arr[1]);
         if (index2 !== -1) {
             cards.splice(index2, 1);
         }

@@ -8,9 +8,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "rootDir": "scripts",
-    "module" : "amd",
-    "outFile" : "ts-built/index.js"
+    "outDir": "ts-built"
   }
 }
-
-

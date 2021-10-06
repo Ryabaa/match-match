@@ -1,25 +1,25 @@
-import { variables } from "./variables.js";
+import { global } from "./variables/index.js";
 import { pages } from "./pages.js";
 
 switch (location.hash) {
     case "#game":
-        variables.main.innerHTML = pages.game;
-        variables.navLinkGame.style.background = "#2F80ED";
+        global.main!.innerHTML = pages.game;
+        global.navLinkGame!.style.background = "#2F80ED";
         break;
 
     case "#about":
-        variables.main.innerHTML = "about";
-        variables.navLinkAbout.style.background = "#2F80ED";
+        global.main!.innerHTML = "about";
+        global.navLinkAbout!.style.background = "#2F80ED";
         break;
 
     case "#score":
-        variables.main.innerHTML = "score";
-        variables.navLinkScore.style.background = "#2F80ED";
+        global.main!.innerHTML = "score";
+        global.navLinkScore!.style.background = "#2F80ED";
         break;
 
     case "#settings":
-        variables.main.innerHTML = "settings";
-        variables.navLinkSettings.style.background = "#2F80ED";
+        global.main!.innerHTML = "settings";
+        global.navLinkSettings!.style.background = "#2F80ED";
         break;
 
     default:
