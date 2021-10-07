@@ -1,6 +1,6 @@
 import { stopGame } from "./script.js";
 import { addAccountBlock, checkMail } from "./utils.js";
-import { cards, game, register, result, global } from "./variables/index.js";
+import { cards, game, getGame, register, result, global } from "./variables/index.js";
 if (register.open !== null) {
     register.open.onclick = function () {
         register.window.classList.toggle("register-visible");
@@ -55,6 +55,7 @@ if (reg !== "done") {
             }
         }
         if (checkregister() === true) {
+            getGame();
             localStorage.setItem("registration", "done");
             global.headerAvatar.src = ava;
             register.window.classList.remove("register-visible");
@@ -89,10 +90,6 @@ else {
     global.headerAvatar.style.display = "unset";
     register.open.style.display = "none";
 }
-game.substrate.onclick = function () {
-    game.substrate.classList.remove("substrate-visible");
-    register.window.classList.remove("register-visible");
-};
 //-------Result Window-------//
 export let openResultWindow = () => {
     if (cards.length === 0) {
@@ -104,4 +101,6 @@ result.btn.onclick = function () {
     result.window.classList.remove("result-visible");
     game.substrate2.classList.remove("substrate-visible");
     stopGame();
+    window.location.hash = "#score";
+    window.location.reload();
 };

@@ -1,25 +1,27 @@
 import { shuffle } from "./utils.js";
 import { openResultWindow } from "./modals.js";
-import { cards, game, images, resetCards, result, global } from "./variables/index.js";
+import { cards, game, images, getGame, resetCards, result, global } from "./variables/index.js";
+import { getCards } from "./variables/cards.js";
 let gameState = false;
-global.stateToggler.onclick = function () {
-    if (gameState === false) {
-        gameState = true;
-        startGame();
-    }
-    else {
-        gameState = false;
-        game.fieldSubstrate.style.display = "unset";
-        stopGame();
-    }
-    if (gameState === true) {
-        global.stateText.textContent = "Stop";
-    }
-    else {
-        global.stateText.textContent = "Start";
-    }
-};
-export { stopGame };
+if (global.stateToggler !== null) {
+    global.stateToggler.onclick = function () {
+        if (gameState === false) {
+            gameState = true;
+            startGame();
+        }
+        else {
+            gameState = false;
+            game.fieldSubstrate.style.display = "unset";
+            stopGame();
+        }
+        if (gameState === true) {
+            global.stateText.textContent = "Stop";
+        }
+        else {
+            global.stateText.textContent = "Start";
+        }
+    };
+}
 //--------------------ClockTimer---------------//
 let timer = null;
 let time = "";
@@ -40,6 +42,7 @@ function clocktimer() {
                 min = "0" + min;
             }
         }
+        getGame();
         game.seconds.innerText = sec;
         game.minutes.innerText = min;
         time = `${min}:${sec}`;
@@ -47,12 +50,16 @@ function clocktimer() {
 }
 //------------Game----------------//
 function startGame() {
+    getCards();
+    getGame();
     spawnImages(cards, shuffle(images));
     clocktimer();
     game.fieldSubstrate.style.display = "none";
 }
-function stopGame() {
+export function stopGame() {
     resetCards();
+    getGame();
+    getCards();
     clearCards(cards);
     clearTimeout(timer);
     sec = "00";
