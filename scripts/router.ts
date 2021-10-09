@@ -8,7 +8,7 @@ switch (location.hash) {
         break;
 
     case "#about":
-        global.main!.innerHTML = "about";
+        global.main!.innerHTML = pages.about;
         global.navLinkAbout!.style.background = "#2F80ED";
         break;
 

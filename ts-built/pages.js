@@ -105,7 +105,24 @@ export let pages = {
                 </div>
             </div>
         </section>`,
-    about: ``,
+    about: `<section class="about">
+                <h2 class="about-title">How to play?</h2>
+                <div class="about-container about-container1">
+                    <div class="about-container__number">1</div>
+                    <h3 class="about-container__text">Register new player in game</h3>
+                </div>
+                <div class="about-container about-container2">
+                    <div class="about-container__number">2</div>
+                    <h3 class="about-container__text">Configure your game settings</h3>
+                </div>
+                <div class="about-container about-container3">
+                    <div class="about-container__number">3</div>
+                    <h3 class="about-container__text">Start you new game! Remember card positions and match it before times up.</h3>
+                </div>
+                <img src="./assets/images/about-img1.png" alt="" class="about-img about-img1" />
+                <img src="./assets/images/about-img2.png" alt="" class="about-img about-img2" />
+                <img src="./assets/images/about-img3.png" alt="" class="about-img about-img3" />
+            </section>`,
     score: ``,
     settings: ``,
 };

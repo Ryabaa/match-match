@@ -10,6 +10,7 @@ $register-card: #21212114;
 
 html {
     font-size: 12px;
+    user-select: none;
 }
 
 * {
@@ -268,4 +269,82 @@ body {
     -webkit-user-drag: none;
     border-radius: 5px;
     box-shadow: 2px 2px 6px #888888;
+}
+
+.about {
+    margin: 35px 0 125px;
+    background: #0000000d;
+    border-radius: 5px;
+    width: 70%;
+    align-items: center;
+    height: 800px;
+    display: grid;
+    padding: 35px 180px 35px 35px;
+    row-gap: 15px;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, auto);
+
+    &-title {
+        font-weight: 500;
+        font-size: 1.66rem;
+        letter-spacing: 0.15px;
+        color: #000000de;
+    }
+    &-container {
+        grid-column: 1 / 2;
+        display: flex;
+        column-gap: 15px;
+        width: max-content;
+        height: max-content;
+        padding: 15px;
+        width: 80%;
+        height: 100%;
+        background-color: $secondary;
+        &__number {
+            background-color: $primary;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $secondary;
+            font-size: 2rem;
+        }
+        &__text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            color: #00000099;
+        }
+    }
+    &-img {
+        justify-self: end;
+        grid-column: 2 / 3;
+        &1 {
+            grid-row: 2 / 3;
+        }
+        &2 {
+            grid-row: 3 / 4;
+        }
+        &3 {
+            grid-row: 4 / 5;
+        }
+    }
+}
+
+.score {
+    margin: 35px 0 125px;
+    background: #0000000d;
+    border-radius: 5px;
+    width: 70%;
+    align-items: center;
+    height: 800px;
+    display: grid;
+    padding: 35px 180px 35px 35px;
+    row-gap: 15px;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, auto);
 }

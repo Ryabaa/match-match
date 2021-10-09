@@ -40,7 +40,7 @@ export function addAccountBlock() {
         localStorage.setItem("name", name);
         localStorage.setItem("lastname", lastname);
         localStorage.setItem("email", email);
-        localStorage.setItem("ava", ava);
+        //localStorage.setItem("ava", ava);
     }
 }
 /* let name: any = localStorage.getItem("name");
