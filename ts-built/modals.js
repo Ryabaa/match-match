@@ -10,8 +10,7 @@ if (register.open !== null) {
 let name = null;
 let lastname = null;
 let email = null;
-let ava = null;
-export { name, lastname, email, ava };
+export { name, lastname, email };
 let reg = localStorage.getItem("registration");
 if (reg !== "done") {
     register.add.onclick = function () {
@@ -57,7 +56,6 @@ if (reg !== "done") {
         if (checkregister() === true) {
             getGame();
             localStorage.setItem("registration", "done");
-            global.headerAvatar.src = ava;
             register.window.classList.remove("register-visible");
             game.substrate.classList.remove("substrate-visible");
             global.stateToggler.style.display = "unset";
@@ -69,24 +67,14 @@ if (reg !== "done") {
         register.window.classList.remove("register-visible");
         game.substrate.classList.remove("substrate-visible");
     };
-    let avatar = false;
-    register.avatar.onchange = function () {
-        let file = register.avatar.files[0];
-        if (file) {
-            ava = URL.createObjectURL(file);
-            register.userAvatar.src = ava;
-        }
-        register.userAvatar.style.display = "unset";
-        register.noAvatar.style.display = "none";
-        avatar = true;
-    };
-    if (avatar === false) {
-        ava = "./assets/icons/no-avatar.svg";
-    }
 }
 else {
-    global.headerAvatar.src = localStorage.getItem("ava");
-    global.stateToggler.style.display = "unset";
+    if (location.hash === "#game") {
+        global.stateToggler.style.display = "unset";
+    }
+    else {
+        global.openGamePage.style.display = "unset";
+    }
     global.headerAvatar.style.display = "unset";
     register.open.style.display = "none";
 }

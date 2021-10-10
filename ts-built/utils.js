@@ -1,4 +1,4 @@
-import { name, email, lastname, ava } from "./modals.js";
+import { name, email, lastname } from "./modals.js";
 import { register } from "./variables/index.js";
 export function shuffle(arr) {
     return arr.sort(() => Math.random() - 0.5);
@@ -36,13 +36,9 @@ export function checkMail() {
     }
 }
 export function addAccountBlock() {
-    if (name && lastname && email && ava !== null) {
+    if (name && lastname && email !== null) {
         localStorage.setItem("name", name);
         localStorage.setItem("lastname", lastname);
         localStorage.setItem("email", email);
-        //localStorage.setItem("ava", ava);
     }
 }
-/* let name: any = localStorage.getItem("name");
-let password: any = localStorage.getItem("password");
-let email: any = localStorage.getItem("email"); */

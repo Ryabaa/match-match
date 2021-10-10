@@ -9,7 +9,15 @@
         <link rel="stylesheet" href="./styles/global/style.css" />
         <link rel="stylesheet" href="./styles/modals/style.css" />
     </head>
-    <body>
+    <body id="body">
+        <div class="preloader">
+            <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    fill="white"
+                    d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+                ></path>
+            </svg>
+        </div>
         <div id="substrate" class="substrate"></div>
         <div id="substrate2" class="substrate"></div>
 
@@ -42,7 +50,8 @@
             </nav>
             <div class="header-container">
                 <button id="gameStateToggler" class="header-container__btn header-container__start-btn"><span id="gameStateText">Start</span> game</button>
-                <img src="" class="header-container__avatar" id="headerAvatar" />
+                <button id="openGamePage" class="header-container__btn">Open game</button>
+                <img src="./assets/icons/no-avatar.svg" class="header-container__avatar" id="headerAvatar" />
                 <button id="registerOpen" class="header-container__btn header-container__register-btn">register new player</button>
             </div>
         </header>
@@ -84,14 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="register-avatar">
-                    <input type="file" id="registerAvatar" accept="image/jpeg,image/png" class="register-avatar__input registerAvatar" />
-                    <label for="registerAvatar">
-                        <p class="register-avatar__text">Select your avatar</p>
-                        <div class="register-avatar__icon" id="registerNoAvatar"></div>
-                        <img class="register-avatar__user-img" src="" id="registerUserAvatar" />
-                    </label>
-                </div>
+                <img src="./assets/icons/no-avatar.svg" />
             </div>
             <div class="register-footer">
                 <button class="register-footer__btn" id="registerAdd">Add user</button>

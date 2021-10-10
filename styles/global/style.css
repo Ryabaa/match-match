@@ -34,6 +34,54 @@ body {
   background: #ffffff;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: #2196f3;
+  z-index: 1001;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  -webkit-animation: preloader-rotate 2s infinite linear;
+          animation: preloader-rotate 2s infinite linear;
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+.loaded .preloader_hiding .preloader {
+  -webkit-transition: 0.3s opacity;
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
 .header {
   z-index: 5;
   -webkit-box-shadow: 0px 4px 4px #0000003d;
@@ -214,10 +262,10 @@ body {
   -webkit-box-shadow: 0px 3px 5px #00000033, 0px 1px 18px #0000001f, 0px 6px 10px #00000024;
           box-shadow: 0px 3px 5px #00000033, 0px 1px 18px #0000001f, 0px 6px 10px #00000024;
   border-radius: 4px;
+  min-width: 130px;
 }
 
 .header-container__start-btn {
-  width: 130px;
   display: none;
 }
 
@@ -495,5 +543,55 @@ body {
       grid-template-columns: repeat(2, 50%);
   -ms-grid-rows: (auto)[4];
       grid-template-rows: repeat(4, auto);
+}
+
+#openGamePage {
+  display: none;
+}
+
+.settings {
+  margin: 35px 0 125px;
+  background: #ffffff;
+  border-radius: 5px;
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  padding: 35px 45px;
+  row-gap: 35px;
+  -webkit-box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+          box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+}
+
+.settings-container {
+  height: 70px;
+  border-bottom: 1px solid #e5e5e5;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.settings-container__title {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.settings-container__text {
+  letter-spacing: 0.25px;
+  color: #00000099;
+  font-weight: 500;
+}
+
+.settings-container__select {
+  border: none;
+  color: #312f2f;
+  font-weight: 700;
+  outline: none;
+}
+
+.settings-container__select:hover {
+  border-bottom: 2px solid #312f2f;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

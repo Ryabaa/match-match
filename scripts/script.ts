@@ -4,25 +4,35 @@ import { cards, game, images, getGame, resetCards, result, global } from "./vari
 import { getCards, ICard } from "./variables/cards.js";
 import { IImage } from "./variables/images.js";
 
+window.onload = function () {
+    global.body!.classList.add("loaded_hiding");
+    window.setTimeout(function () {
+        global.body!.classList.add("loaded");
+        global.body!.classList.remove("loaded_hiding");
+    }, 500);
+};
+
 let gameState = false;
 
-if (global.stateToggler !== null) {
-    global.stateToggler!.onclick = function () {
-        if (gameState === false) {
-            gameState = true;
-            startGame();
-        } else {
-            gameState = false;
-            game.fieldSubstrate!.style.display = "unset";
-            stopGame();
-        }
-        if (gameState === true) {
-            global.stateText!.textContent = "Stop";
-        } else {
-            global.stateText!.textContent = "Start";
-        }
-    };
-}
+global.stateToggler!.onclick = function () {
+    if (gameState === false) {
+        gameState = true;
+        startGame();
+    } else {
+        gameState = false;
+        game.fieldSubstrate!.style.display = "unset";
+        stopGame();
+    }
+    if (gameState === true) {
+        global.stateText!.textContent = "Stop";
+    } else {
+        global.stateText!.textContent = "Start";
+    }
+};
+
+global.openGamePage!.onclick = function () {
+    location.hash = "#game";
+};
 
 //--------------------ClockTimer---------------//
 let timer: any = null;

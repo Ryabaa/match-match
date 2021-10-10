@@ -18,12 +18,16 @@ switch (location.hash) {
         break;
 
     case "#settings":
-        global.main!.innerHTML = "settings";
+        global.main!.innerHTML = pages.settings;
         global.navLinkSettings!.style.background = "#2F80ED";
         break;
 
     default:
-        location.hash = "#game";
+        if (localStorage.getItem("registration") !== "done") {
+            location.hash = "#about";
+        } else {
+            location.hash = "#game";
+        }
 }
 
 window.onhashchange = function () {

@@ -1,5 +1,5 @@
 export let pages = {
-    game: `<section id="game" class="game">
+    game: `<section id="index" class="game">
             <div id="gameFieldSubstrate"></div>
             <div class="game-time">
                 <div id="minutes">00</div>
@@ -124,6 +124,25 @@ export let pages = {
                 <img src="./assets/images/about-img2.png" alt="" class="about-img about-img2" />
                 <img src="./assets/images/about-img3.png" alt="" class="about-img about-img3" />
             </section>`,
-    score: ``,
-    settings: ``,
+    score: `
+    
+    `,
+    settings: ` <section class="settings">
+                    <div class="settings-container">
+                        <h2 class="settings-container__title">Game cards</h2>
+                        <label class="settings-container__text">Select game cards type: </label>
+                        <select id="selectCardType" class="settings-container__select">
+                            <option>Animals</option>
+                            <option>Fruits</option>
+                        </select>
+                    </div>
+                    <div class="settings-container">
+                        <h2 class="settings-container__title">Difficulty</h2>
+                        <label class="settings-container__text">Select game difficulty: </label>
+                        <select id="selectDifficult" class="settings-container__select">
+                            <option>Easy (3x3)</option>
+                            <option>Medium (4x4)</option>
+                        </select>
+                    </div>
+                </section>`,
 };

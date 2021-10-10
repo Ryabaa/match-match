@@ -7,4 +7,6 @@ export let global = {
     navLinkAbout: document.getElementById("navLinkAbout"),
     navLinkScore: document.getElementById("navLinkScore"),
     navLinkSettings: document.getElementById("navLinkSettings"),
+    openGamePage: document.getElementById("openGamePage"),
+    body: document.getElementById("body"),
 };

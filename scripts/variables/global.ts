@@ -7,6 +7,8 @@ interface IGlobal {
     navLinkAbout: HTMLElement | null;
     navLinkScore: HTMLElement | null;
     navLinkSettings: HTMLElement | null;
+    openGamePage: HTMLElement | null;
+    body: HTMLElement | null;
 }
 
 export let global: IGlobal = {
@@ -18,4 +20,6 @@ export let global: IGlobal = {
     navLinkAbout: document.getElementById("navLinkAbout"),
     navLinkScore: document.getElementById("navLinkScore"),
     navLinkSettings: document.getElementById("navLinkSettings"),
+    openGamePage: document.getElementById("openGamePage"),
+    body: document.getElementById("body"),
 };
