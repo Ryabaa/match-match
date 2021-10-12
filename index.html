@@ -31,22 +31,22 @@
                 </div>
             </div>
             <nav class="header-nav">
-                <a href="#game" id="navLinkGame" class="header-nav__container">
+                <button id="navLinkGame" class="header-nav__container">
                     <img src="./assets/icons/game.png" />
                     <p class="header-nav__container-text">Play Game</p>
-                </a>
-                <a href="#about" id="navLinkAbout" class="header-nav__container">
+                </button>
+                <button id="navLinkAbout" class="header-nav__container">
                     <img src="./assets/icons/about.png" />
                     <p class="header-nav__container-text">About Game</p>
-                </a>
-                <a href="#score" id="navLinkScore" class="header-nav__container">
+                </button>
+                <button id="navLinkScore" class="header-nav__container">
                     <img src="./assets/icons/star.svg" />
                     <p class="header-nav__container-text">Best Score</p>
-                </a>
-                <a href="#settings" id="navLinkSettings" class="header-nav__container">
+                </button>
+                <button id="navLinkSettings" class="header-nav__container">
                     <img src="./assets/icons/settings.svg" />
                     <p class="header-nav__container-text">Game Settings</p>
-                </a>
+                </button>
             </nav>
             <div class="header-container">
                 <button id="gameStateToggler" class="header-container__btn header-container__start-btn"><span id="gameStateText">Start</span> game</button>
@@ -107,6 +107,14 @@
                 <span id="resultName" class="result-text"></span>, congratulations! You successfully found all matches on <span id="resultTime2" class="result-text__span">00:00</span> minutes.
             </p>
             <button class="result-btn" id="resultBtn">OK</button>
+        </section>
+
+        <section id="relinkWindow" class="relink">
+            <p class="relink-text">Are you sure you want to go to another page? Game progress will be lost!</p>
+            <div class="relink-container">
+                <button class="relink-btn" id="relinkCancelBtn">Cancel</button>
+                <button class="relink-btn" id="relinkOkBtn">OK</button>
+            </div>
         </section>
 
         <script type="module" src="./ts-built/modals.js"></script>

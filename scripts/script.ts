@@ -1,9 +1,6 @@
 import { shuffle } from "./utils.js";
-import { openResultWindow } from "./modals.js";
-import { cards, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
-import { getCards, ICard } from "./variables/cards.js";
-import { IImage } from "./variables/images.js";
-import { gameCardType, gameDifficult } from "./router.js";
+import { openResultWindow, checkGameState } from "./modals.js";
+import { IImage, cards, getCards, ICard, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
 
 window.onload = function () {
     global.body!.classList.add("loaded_hiding");
@@ -13,7 +10,7 @@ window.onload = function () {
     }, 500);
 };
 
-let gameState = false;
+export let gameState = false;
 
 global.stateToggler!.onclick = function () {
     if (gameState === false) {
@@ -33,6 +30,19 @@ global.stateToggler!.onclick = function () {
 
 global.openGamePage!.onclick = function () {
     location.hash = "#game";
+};
+
+global.navLinkAbout!.onclick = () => {
+    checkGameState("about");
+};
+global.navLinkGame!.onclick = () => {
+    checkGameState("game");
+};
+global.navLinkScore!.onclick = () => {
+    checkGameState("score");
+};
+global.navLinkSettings!.onclick = () => {
+    checkGameState("settings");
 };
 
 //--------------------ClockTimer---------------//

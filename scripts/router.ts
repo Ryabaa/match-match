@@ -1,4 +1,4 @@
-import { getGame, game, getCards, global, containers, getContainers } from "./variables/index.js";
+import { getCards, global } from "./variables/index.js";
 import { pages } from "./pages.js";
 import { gameSettings } from "./script.js";
 

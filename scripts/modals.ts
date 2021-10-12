@@ -1,6 +1,6 @@
-import { stopGame } from "./script.js";
+import { gameState, stopGame } from "./script.js";
 import { addAccountBlock, checkMail } from "./utils.js";
-import { cards, game, getGame, register, result, global } from "./variables/index.js";
+import { cards, game, getGame, register, result, global, relink } from "./variables/index.js";
 
 if (register.open !== null) {
     register.open.onclick = function () {
@@ -97,3 +97,21 @@ result.btn!.onclick = function () {
     window.location.hash = "#score";
     window.location.reload();
 };
+
+export function checkGameState(hash: string) {
+    if (gameState === true) {
+        relink.window!.classList.toggle("relink-visible");
+        game.substrate2!.classList.toggle("substrate-visible");
+        //pauseGame()
+    } else {
+        location.hash = `#${hash}`;
+    }
+    relink.cancelBtn!.onclick = () => {
+        relink.window!.classList.remove("relink-visible");
+        game.substrate2!.classList.remove("substrate-visible");
+    };
+
+    relink.okBtn!.onclick = () => {
+        location.hash = `#${hash}`;
+    };
+}

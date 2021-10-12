@@ -1,7 +1,6 @@
 import { shuffle } from "./utils.js";
-import { openResultWindow } from "./modals.js";
-import { cards, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
-import { getCards } from "./variables/cards.js";
+import { openResultWindow, checkGameState } from "./modals.js";
+import { cards, getCards, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
 window.onload = function () {
     global.body.classList.add("loaded_hiding");
     window.setTimeout(function () {
@@ -9,7 +8,7 @@ window.onload = function () {
         global.body.classList.remove("loaded_hiding");
     }, 500);
 };
-let gameState = false;
+export let gameState = false;
 global.stateToggler.onclick = function () {
     if (gameState === false) {
         gameState = true;
@@ -29,6 +28,18 @@ global.stateToggler.onclick = function () {
 };
 global.openGamePage.onclick = function () {
     location.hash = "#game";
+};
+global.navLinkAbout.onclick = () => {
+    checkGameState("about");
+};
+global.navLinkGame.onclick = () => {
+    checkGameState("game");
+};
+global.navLinkScore.onclick = () => {
+    checkGameState("score");
+};
+global.navLinkSettings.onclick = () => {
+    checkGameState("settings");
 };
 //--------------------ClockTimer---------------//
 let timer = null;

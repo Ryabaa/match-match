@@ -365,4 +365,92 @@ input {
   border: 1px solid #2196f3;
   color: #2196f3;
 }
+
+.relink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 600px;
+  min-height: 130px;
+  padding: 20px 30px;
+  visibility: hidden;
+  position: fixed;
+  left: 50%;
+  background-color: #ffffff;
+  z-index: 11;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-bottom: 150%;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.relink-visible {
+  visibility: visible;
+  margin: 0;
+}
+
+.relink-text {
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #00000099;
+  font-weight: 500;
+}
+
+.relink-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.relink-btn {
+  -webkit-box-shadow: 0px 0px 2px #0000001f, 0px 2px 2px #0000003d;
+          box-shadow: 0px 0px 2px #0000001f, 0px 2px 2px #0000003d;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  width: 108px;
+  height: 36px;
+}
+
+.relink-btn:first-child {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+.relink-btn:last-child {
+  background: #2196f3;
+  color: #ffffff;
+}
 /*# sourceMappingURL=style.css.map */
