@@ -294,7 +294,6 @@ body {
   background: #0000000d;
   border-radius: 5px;
   width: 70%;
-  height: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,6 +301,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 100px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -395,7 +395,11 @@ body {
 #gameImage_9,
 #gameImage_10,
 #gameImage_11,
-#gameImage_12 {
+#gameImage_12,
+#gameImage_13,
+#gameImage_14,
+#gameImage_15,
+#gameImage_16 {
   display: none;
 }
 
@@ -583,15 +587,23 @@ body {
   font-weight: 500;
 }
 
-.settings-container__select {
-  border: none;
+.settings-container__btn {
+  border: 1px solid #312f2f;
   color: #312f2f;
-  font-weight: 700;
+  font-weight: 500;
   outline: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: #ffffff;
+  height: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.settings-container__select:hover {
-  border-bottom: 2px solid #312f2f;
+.settings-container__btn:hover {
   cursor: pointer;
+  background: #2196f3;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

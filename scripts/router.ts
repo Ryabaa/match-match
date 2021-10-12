@@ -1,10 +1,15 @@
-import { global } from "./variables/index.js";
+import { getGame, game, getCards, global, containers, getContainers } from "./variables/index.js";
 import { pages } from "./pages.js";
+import { gameSettings } from "./script.js";
+
+export let gameDifficult: any = null;
+export let gameCardType: any = null;
 
 switch (location.hash) {
     case "#game":
         global.main!.innerHTML = pages.game;
         global.navLinkGame!.style.background = "#2F80ED";
+        getCards();
         break;
 
     case "#about":
@@ -20,6 +25,7 @@ switch (location.hash) {
     case "#settings":
         global.main!.innerHTML = pages.settings;
         global.navLinkSettings!.style.background = "#2F80ED";
+        gameSettings();
         break;
 
     default:

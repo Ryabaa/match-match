@@ -1,6 +1,6 @@
 import { shuffle } from "./utils.js";
 import { openResultWindow } from "./modals.js";
-import { cards, game, images, getGame, resetCards, result, global } from "./variables/index.js";
+import { cards, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
 import { getCards } from "./variables/cards.js";
 window.onload = function () {
     global.body.classList.add("loaded_hiding");
@@ -57,9 +57,120 @@ function clocktimer() {
     }, 1000);
 }
 //------------Game----------------//
+export function gameSettings() {
+    getGame();
+    game.cardTypeBtn_fruits.onclick = () => {
+        localStorage.setItem("cardType", "Fruits");
+        game.cardTypeBtn_animals.style.background = "none";
+        game.cardTypeBtn_animals.style.color = "#312f2f";
+        game.cardTypeBtn_fruits.style.background = "#2196f3";
+        game.cardTypeBtn_fruits.style.color = "#fff";
+    };
+    game.cardTypeBtn_animals.onclick = () => {
+        localStorage.setItem("cardType", "Animals");
+        game.cardTypeBtn_fruits.style.background = "none";
+        game.cardTypeBtn_fruits.style.color = "#312f2f";
+        game.cardTypeBtn_animals.style.background = "#2196f3";
+        game.cardTypeBtn_animals.style.color = "#fff";
+    };
+    switch (localStorage.getItem("cardType")) {
+        case "Animals":
+            game.cardTypeBtn_fruits.style.background = "none";
+            game.cardTypeBtn_fruits.style.color = "#312f2f";
+            game.cardTypeBtn_animals.style.background = "#2196f3";
+            game.cardTypeBtn_animals.style.color = "#fff";
+            break;
+        case "Fruits":
+            game.cardTypeBtn_animals.style.background = "none";
+            game.cardTypeBtn_animals.style.color = "#312f2f";
+            game.cardTypeBtn_fruits.style.background = "#2196f3";
+            game.cardTypeBtn_fruits.style.color = "#fff";
+            break;
+        default:
+            game.cardTypeBtn_fruits.style.background = "none";
+            game.cardTypeBtn_fruits.style.color = "#312f2f";
+            game.cardTypeBtn_animals.style.background = "#2196f3";
+            game.cardTypeBtn_animals.style.color = "#fff";
+            localStorage.setItem("difficult", "Easy");
+            break;
+    }
+    game.difficultBtn_easy.onclick = () => {
+        localStorage.setItem("difficult", "Easy");
+        game.difficultBtn_medium.style.background = "none";
+        game.difficultBtn_medium.style.color = "#312f2f";
+        game.difficultBtn_easy.style.background = "#2196f3";
+        game.difficultBtn_easy.style.color = "#fff";
+    };
+    game.difficultBtn_medium.onclick = () => {
+        localStorage.setItem("difficult", "Medium");
+        game.difficultBtn_easy.style.background = "none";
+        game.difficultBtn_easy.style.color = "#312f2f";
+        game.difficultBtn_medium.style.background = "#2196f3";
+        game.difficultBtn_medium.style.color = "#fff";
+    };
+    switch (localStorage.getItem("difficult")) {
+        case "Easy":
+            game.difficultBtn_medium.style.background = "none";
+            game.difficultBtn_medium.style.color = "#312f2f";
+            game.difficultBtn_easy.style.background = "#2196f3";
+            game.difficultBtn_easy.style.color = "#fff";
+            break;
+        case "Medium":
+            game.difficultBtn_easy.style.background = "none";
+            game.difficultBtn_easy.style.color = "#312f2f";
+            game.difficultBtn_medium.style.background = "#2196f3";
+            game.difficultBtn_medium.style.color = "#fff";
+            break;
+        default:
+            game.difficultBtn_medium.style.background = "none";
+            game.difficultBtn_medium.style.color = "#312f2f";
+            game.difficultBtn_easy.style.background = "#2196f3";
+            game.difficultBtn_easy.style.color = "#fff";
+            localStorage.setItem("difficult", "Easy");
+            break;
+    }
+}
+let images = [];
+let type;
+function cardType() {
+    switch (localStorage.getItem("cardType")) {
+        case "Animals":
+            type = "animals";
+            break;
+        case "Fruits":
+            type = "fruits";
+            break;
+        default:
+            break;
+    }
+}
+function getImages() {
+    switch (localStorage.getItem("difficult")) {
+        case "Easy":
+            if (type === "animals") {
+                images = animalsEasy;
+            }
+            else {
+                images = fruitsEasy;
+            }
+            break;
+        case "Medium":
+            if (type === "animals") {
+                images = animalsMedium;
+            }
+            else {
+                images = fruitsMedium;
+            }
+            break;
+    }
+}
 function startGame() {
     getCards();
     getGame();
+    cardType();
+    getImages();
+    console.log(cards);
+    console.log(images);
     spawnImages(cards, shuffle(images));
     clocktimer();
     game.fieldSubstrate.style.display = "none";

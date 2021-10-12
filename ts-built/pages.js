@@ -103,6 +103,38 @@ export let pages = {
                     <img src="./assets/icons/check.png" alt="" id="succes12" class="succesHide gameImageStateIcon" />
                     <img class="cardCover" id="backsideCard_12" src="./assets/images/card-top.png" />
                 </div>
+                <div class="game-field__container" id="gameContainer_13">
+                    <div class="game-field__container-image" id="gameImage_13"></div>
+                    <div class="game-field__container-background game-field__container-backgroundRed" id="failCover13"></div>
+                    <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover13"></div>
+                    <img src="./assets/icons/cross.png" alt="" id="fail13" class="failHide gameImageStateIcon" />
+                    <img src="./assets/icons/check.png" alt="" id="succes13" class="succesHide gameImageStateIcon" />
+                    <img class="cardCover" id="backsideCard_13" src="./assets/images/card-top.png" />
+                </div>
+                <div class="game-field__container" id="gameContainer_14">
+                    <div class="game-field__container-image" id="gameImage_14"></div>
+                    <div class="game-field__container-background game-field__container-backgroundRed" id="failCover14"></div>
+                    <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover14"></div>
+                    <img src="./assets/icons/cross.png" alt="" id="fail14" class="failHide gameImageStateIcon" />
+                    <img src="./assets/icons/check.png" alt="" id="succes14" class="succesHide gameImageStateIcon" />
+                    <img class="cardCover" id="backsideCard_14" src="./assets/images/card-top.png" />
+                </div>
+                <div class="game-field__container" id="gameContainer_15">
+                    <div class="game-field__container-image" id="gameImage_15"></div>
+                    <div class="game-field__container-background game-field__container-backgroundRed" id="failCover15"></div>
+                    <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover15"></div>
+                    <img src="./assets/icons/cross.png" alt="" id="fail15" class="failHide gameImageStateIcon" />
+                    <img src="./assets/icons/check.png" alt="" id="succes15" class="succesHide gameImageStateIcon" />
+                    <img class="cardCover" id="backsideCard_15" src="./assets/images/card-top.png" />
+                </div>
+                <div class="game-field__container" id="gameContainer_16">
+                    <div class="game-field__container-image" id="gameImage_16"></div>
+                    <div class="game-field__container-background game-field__container-backgroundRed" id="failCover16"></div>
+                    <div class="game-field__container-background game-field__container-backgroundGreen" id="succesCover16"></div>
+                    <img src="./assets/icons/cross.png" alt="" id="fail16" class="failHide gameImageStateIcon" />
+                    <img src="./assets/icons/check.png" alt="" id="succes16" class="succesHide gameImageStateIcon" />
+                    <img class="cardCover" id="backsideCard_16" src="./assets/images/card-top.png" />
+                </div>
             </div>
         </section>`,
     about: `<section class="about">
@@ -130,18 +162,14 @@ export let pages = {
                     <div class="settings-container">
                         <h2 class="settings-container__title">Game cards</h2>
                         <label class="settings-container__text">Select game cards type: </label>
-                        <select id="selectCardType" class="settings-container__select">
-                            <option>Animals</option>
-                            <option>Fruits</option>
-                        </select>
+                        <button id="cardTypeBtn_animals" class="settings-container__btn">Animals</button>
+                        <button id="cardTypeBtn_fruits" class="settings-container__btn">Fruits</button>
                     </div>
                     <div class="settings-container">
                         <h2 class="settings-container__title">Difficulty</h2>
                         <label class="settings-container__text">Select game difficulty: </label>
-                        <select id="selectDifficult" class="settings-container__select">
-                            <option>Easy (3x3)</option>
-                            <option>Medium (4x4)</option>
-                        </select>
+                        <button id="difficultBtn_easy" class="settings-container__btn">Easy (4x3)</button>
+                        <button id="difficultBtn_medium" class="settings-container__btn">Medium (4x4)</button>
                     </div>
                 </section>`,
 };

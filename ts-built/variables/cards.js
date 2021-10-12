@@ -1,6 +1,7 @@
+import { containers, getContainers } from "./index.js";
 export let cards = [];
 export let getCards = () => {
-    cards = [
+    let arr = [
         {
             imageContainer: document.getElementById("gameImage_1"),
             cover: document.getElementById("backsideCard_1"),
@@ -109,7 +110,57 @@ export let getCards = () => {
             succesCover: document.getElementById("succesCover12"),
             failCover: document.getElementById("failCover12"),
         },
+        {
+            imageContainer: document.getElementById("gameImage_13"),
+            cover: document.getElementById("backsideCard_13"),
+            imageId: null,
+            succes: document.getElementById("succes13"),
+            fail: document.getElementById("fail13"),
+            succesCover: document.getElementById("succesCover13"),
+            failCover: document.getElementById("failCover13"),
+        },
+        {
+            imageContainer: document.getElementById("gameImage_14"),
+            cover: document.getElementById("backsideCard_14"),
+            imageId: null,
+            succes: document.getElementById("succes14"),
+            fail: document.getElementById("fail14"),
+            succesCover: document.getElementById("succesCover14"),
+            failCover: document.getElementById("failCover14"),
+        },
+        {
+            imageContainer: document.getElementById("gameImage_15"),
+            cover: document.getElementById("backsideCard_15"),
+            imageId: null,
+            succes: document.getElementById("succes15"),
+            fail: document.getElementById("fail15"),
+            succesCover: document.getElementById("succesCover15"),
+            failCover: document.getElementById("failCover15"),
+        },
+        {
+            imageContainer: document.getElementById("gameImage_16"),
+            cover: document.getElementById("backsideCard_16"),
+            imageId: null,
+            succes: document.getElementById("succes16"),
+            fail: document.getElementById("fail16"),
+            succesCover: document.getElementById("succesCover16"),
+            failCover: document.getElementById("failCover16"),
+        },
     ];
+    switch (localStorage.getItem("difficult")) {
+        case "Easy":
+            arr.splice(12, 4);
+            cards = arr;
+            getContainers();
+            containers.container13.style.display = "none";
+            containers.container14.style.display = "none";
+            containers.container15.style.display = "none";
+            containers.container16.style.display = "none";
+            break;
+        case "Medium":
+            cards = arr;
+            break;
+    }
 };
 export let cardsDefault = [
     {
@@ -219,6 +270,42 @@ export let cardsDefault = [
         fail: document.getElementById("fail12"),
         succesCover: document.getElementById("succesCover12"),
         failCover: document.getElementById("failCover12"),
+    },
+    {
+        imageContainer: document.getElementById("gameImage_13"),
+        cover: document.getElementById("backsideCard_13"),
+        imageId: null,
+        succes: document.getElementById("succes13"),
+        fail: document.getElementById("fail13"),
+        succesCover: document.getElementById("succesCover13"),
+        failCover: document.getElementById("failCover13"),
+    },
+    {
+        imageContainer: document.getElementById("gameImage_14"),
+        cover: document.getElementById("backsideCard_14"),
+        imageId: null,
+        succes: document.getElementById("succes14"),
+        fail: document.getElementById("fail14"),
+        succesCover: document.getElementById("succesCover14"),
+        failCover: document.getElementById("failCover14"),
+    },
+    {
+        imageContainer: document.getElementById("gameImage_15"),
+        cover: document.getElementById("backsideCard_15"),
+        imageId: null,
+        succes: document.getElementById("succes15"),
+        fail: document.getElementById("fail15"),
+        succesCover: document.getElementById("succesCover15"),
+        failCover: document.getElementById("failCover15"),
+    },
+    {
+        imageContainer: document.getElementById("gameImage_16"),
+        cover: document.getElementById("backsideCard_16"),
+        imageId: null,
+        succes: document.getElementById("succes16"),
+        fail: document.getElementById("fail16"),
+        succesCover: document.getElementById("succesCover16"),
+        failCover: document.getElementById("failCover16"),
     },
 ];
 export function resetCards() {
