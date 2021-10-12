@@ -102,7 +102,7 @@ export function gameSettings() {
             game.cardTypeBtn_fruits.style.color = "#312f2f";
             game.cardTypeBtn_animals.style.background = "#2196f3";
             game.cardTypeBtn_animals.style.color = "#fff";
-            localStorage.setItem("difficult", "Easy");
+            localStorage.setItem("cardType", "Animals");
             break;
     }
     game.difficultBtn_easy.onclick = () => {
@@ -180,8 +180,6 @@ function startGame() {
     getGame();
     cardType();
     getImages();
-    console.log(cards);
-    console.log(images);
     spawnImages(cards, shuffle(images));
     clocktimer();
     game.fieldSubstrate.style.display = "none";

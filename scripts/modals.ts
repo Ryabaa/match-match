@@ -5,7 +5,7 @@ import { cards, game, getGame, register, result, global, relink } from "./variab
 if (register.open !== null) {
     register.open.onclick = function () {
         register.window!.classList.toggle("register-visible");
-        game.substrate!.classList.toggle("substrate-visible");
+        game.substrate2!.classList.toggle("substrate-visible");
     };
 }
 
@@ -61,15 +61,16 @@ if (reg !== "done") {
             getGame();
             localStorage.setItem("registration", "done");
             register.window!.classList.remove("register-visible");
-            game.substrate!.classList.remove("substrate-visible");
+            game.substrate2!.classList.remove("substrate-visible");
             global.stateToggler!.style.display = "unset";
             global.headerAvatar!.style.display = "unset";
             register.open!.style.display = "none";
+            location.hash = "#settings";
         }
     };
     register.cancel!.onclick = function () {
         register.window!.classList.remove("register-visible");
-        game.substrate!.classList.remove("substrate-visible");
+        game.substrate2!.classList.remove("substrate-visible");
     };
 } else {
     if (location.hash === "#game") {
