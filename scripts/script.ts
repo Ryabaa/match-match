@@ -1,6 +1,6 @@
 import { shuffle } from "./utils.js";
 import { openResultWindow, checkGameState } from "./modals.js";
-import { IImage, cards, getCards, ICard, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
+import { IImage, getScore, cards, getCards, score, ICard, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "./variables/index.js";
 
 window.onload = function () {
     global.body!.classList.add("loaded_hiding");
@@ -27,6 +27,42 @@ global.stateToggler!.onclick = function () {
         global.stateText!.textContent = "Start";
     }
 };
+
+export function leaderboard() {
+    let scoreTime;
+    let getTime = localStorage.getItem("time");
+    if (getTime === null) {
+        scoreTime = "00:00";
+    } else {
+        scoreTime = getTime;
+    }
+
+    let player1 = { name: "Nicci Troiani", mail: "nicci@gmail.com", time: "00:23" };
+    let player2 = { name: "George Fields", mail: "george.f@gmail.com", time: "00:29" };
+    let player3 = { name: "Jones Dermot", mail: "dermot@gamil.com", time: "00:32" };
+    let player4 = { name: "Jane Doe", mail: "jane.doe@gmail.com", time: "00:39" };
+    let player5 = { name: `${localStorage.getItem("name")} ${localStorage.getItem("lastname")}`, mail: `${localStorage.getItem("email")}`, time: `${scoreTime}` };
+
+    getScore();
+
+    let names = [score.name1, score.name2, score.name3, score.name4, score.name5];
+    let mail = [score.mail1, score.mail2, score.mail3, score.mail4, score.mail5];
+    let timea = [score.time1, score.time2, score.time3, score.time4, score.time5];
+
+    let getPlayers = [player1, player2, player3, player4, player5];
+
+    let players = getPlayers.sort(function (a, b) {
+        return Number(b.time) - Number(a.time);
+    });
+
+    console.log(getPlayers);
+
+    for (let i = 0; i < players.length; i++) {
+        names[i]!.innerHTML = players[i].name;
+        mail[i]!.innerHTML = players[i].mail;
+        timea[i]!.innerHTML = players[i].time;
+    }
+}
 
 global.openGamePage!.onclick = function () {
     location.hash = "#game";
@@ -260,6 +296,7 @@ function check(arr: number[], card: ICard, getSucces: any) {
                 result.name!.innerHTML = localStorage.getItem("name") || "";
                 result.time1!.innerHTML = time;
                 result.time2!.innerHTML = time;
+                localStorage.setItem("time", time);
                 clearTimeout(timer);
                 openResultWindow();
             }

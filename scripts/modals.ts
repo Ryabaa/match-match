@@ -4,6 +4,7 @@ import { cards, game, getGame, register, result, global, relink } from "./variab
 
 if (register.open !== null) {
     register.open.onclick = function () {
+        getGame();
         register.window!.classList.toggle("register-visible");
         game.substrate2!.classList.toggle("substrate-visible");
     };
@@ -91,12 +92,16 @@ export let openResultWindow = () => {
     }
 };
 
-result.btn!.onclick = function () {
-    result.window!.classList.remove("result-visible");
-    game.substrate2!.classList.remove("substrate-visible");
-    stopGame();
+result.btnYes!.onclick = function () {
     window.location.hash = "#score";
     window.location.reload();
+};
+
+result.btnNo!.onclick = function () {
+    stopGame();
+    global.stateText!.textContent = "Start";
+    result.window!.classList.remove("result-visible");
+    game.substrate2!.classList.remove("substrate-visible");
 };
 
 export function checkGameState(hash: string) {

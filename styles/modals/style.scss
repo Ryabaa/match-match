@@ -220,7 +220,7 @@ input {
     justify-content: space-between;
     align-items: center;
     max-width: 360px;
-    min-height: 190px;
+    min-height: 250px;
     padding: 20px 30px;
     visibility: hidden;
     position: fixed;
@@ -243,7 +243,13 @@ input {
         font-weight: 700;
         text-align: center;
     }
+    &-container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+    }
     &-text {
+        text-align: center;
         font-family: Roboto;
         font-size: 14px;
         line-height: 20px;
@@ -270,10 +276,20 @@ input {
         text-transform: uppercase;
         color: $secondary;
         @include slowTrans();
-        &:hover {
-            background-color: $secondary;
-            border: 1px solid $primary;
+        &:first-child {
+            background: $secondary;
             color: $primary;
+            border: 1px solid $primary;
+            &:hover {
+                background-color: #e3f2fd;
+            }
+        }
+        &:last-child {
+            background: $primary;
+            color: $secondary;
+            &:hover {
+                background-color: #0465b4;
+            }
         }
     }
 }
@@ -325,13 +341,21 @@ input {
         font-weight: 500;
         width: 108px;
         height: 36px;
+        @include slowTrans();
         &:first-child {
-            background: #e3f2fd;
+            background: $secondary;
             color: $primary;
+            border: 1px solid $primary;
+            &:hover {
+                background-color: #e3f2fd;
+            }
         }
         &:last-child {
             background: $primary;
             color: $secondary;
+            &:hover {
+                background-color: #0465b4;
+            }
         }
     }
 }

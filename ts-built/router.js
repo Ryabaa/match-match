@@ -1,21 +1,21 @@
-import { getCards, global } from "./variables/index.js";
+import { global } from "./variables/index.js";
 import { pages } from "./pages.js";
-import { gameSettings } from "./script.js";
+import { gameSettings, leaderboard } from "./script.js";
 export let gameDifficult = null;
 export let gameCardType = null;
 switch (location.hash) {
     case "#game":
         global.main.innerHTML = pages.game;
         global.navLinkGame.style.background = "#2F80ED";
-        getCards();
         break;
     case "#about":
         global.main.innerHTML = pages.about;
         global.navLinkAbout.style.background = "#2F80ED";
         break;
     case "#score":
-        global.main.innerHTML = "score";
+        global.main.innerHTML = pages.score;
         global.navLinkScore.style.background = "#2F80ED";
+        leaderboard();
         break;
     case "#settings":
         global.main.innerHTML = pages.settings;

@@ -6,4 +6,5 @@ import { fruitsEasy, fruitsMedium, animalsEasy, animalsMedium } from "./images.j
 import { register } from "./register.js";
 import { containers, getContainers } from "./containers.js";
 import { relink } from "./relink.js";
-export { cards, game, containers, fruitsEasy, fruitsMedium, animalsEasy, relink, animalsMedium, register, getGame, getCards, resetCards, result, global, getContainers };
+import { score, getScore } from "./score.js";
+export { cards, getScore, game, containers, fruitsEasy, score, fruitsMedium, animalsEasy, relink, animalsMedium, register, getGame, getCards, resetCards, result, global, getContainers, };

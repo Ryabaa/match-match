@@ -156,9 +156,53 @@ export let pages = {
                 <img src="./assets/images/about-img2.png" alt="" class="about-img about-img2" />
                 <img src="./assets/images/about-img3.png" alt="" class="about-img about-img3" />
             </section>`,
-    score: `
-    
-    `,
+
+    score: `<section class="score">
+                <h2 class="score-title">Best players</h2>
+                <div class="score-container">
+                    <div class="score-card">
+                        <img src="./assets/images/nicci.png" alt="" class="score-card__avatar" />
+                        <div class="score-card__container">
+                            <h3 class="score-card__name">Nicci Troiani</h3>
+                            <p class="score-card__mail">nicci@gmail.com</p>
+                        </div>
+                        <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime1"></span></p>
+                    </div>
+                    <div class="score-card">
+                        <img src="./assets/images/george.png" alt="" class="score-card__avatar" />
+                        <div class="score-card__container">
+                            <h3 class="score-card__name">George Fields</h3>
+                            <p class="score-card__mail">george.f@gmail.com</p>
+                        </div>
+                        <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime2"></span></p>
+                    </div>
+                    <div class="score-card">
+                        <img src="./assets/images/jones.png" alt="" class="score-card__avatar" />
+                        <div class="score-card__container">
+                            <h3 class="score-card__name">Jones Dermot</h3>
+                            <p class="score-card__mail">dermot@gamil.com</p>
+                        </div>
+                        <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime3"></span></p>
+                    </div>
+                    <div class="score-card">
+                        <img src="./assets/images/jane.png" alt="" class="score-card__avatar" />
+                        <div class="score-card__container">
+                            <h3 class="score-card__name">Jane Doe</h3>
+                            <p class="score-card__mail">jane.doe@gmail.com</p>
+                        </div>
+                        <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime4"></span></p>
+                    </div>
+                    <div class="score-card" id="scorePlayerCard">
+                        <img src="./assets/icons/no-avatar.svg" alt="" class="score-card__avatar" />
+                        <div class="score-card__container">
+                            <h3 class="score-card__name" id="name5"></h3>
+                            <p class="score-card__mail" id="mail5"></p>
+                        </div>
+                        <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime5"></span></p>
+                    </div>
+                </div>
+            </section>`,
+
     settings: ` <section class="settings">
                     <div class="settings-container">
                         <h2 class="settings-container__title">Game cards</h2>

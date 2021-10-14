@@ -1,5 +1,5 @@
 $primary: #2196f3;
-$secondary: #ffffff;
+$secondary: #fff;
 $register-card: #21212114;
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
@@ -149,7 +149,7 @@ body {
                 font-size: 12px;
                 z-index: 1;
                 text-align: center;
-                color: #fff;
+                color: $secondary;
                 letter-spacing: 0.4px;
             }
         }
@@ -380,13 +380,70 @@ body {
     background: #0000000d;
     border-radius: 5px;
     width: 70%;
-    align-items: center;
+    display: flex;
     height: 800px;
-    display: grid;
-    padding: 35px 180px 35px 35px;
-    row-gap: 15px;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(4, auto);
+    padding: 50px 10px 10px 45px;
+    flex-direction: column;
+    row-gap: 25px;
+    &-title {
+        font-weight: 500;
+        font-size: 1.66rem;
+        letter-spacing: 0.15px;
+        color: #000000de;
+    }
+    &-container {
+        display: flex;
+        flex-direction: column;
+        width: 87%;
+        row-gap: 15px;
+    }
+    &-card {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        border-bottom: #21212114 1px solid;
+        column-gap: 15px;
+        position: relative;
+        padding: 7px 0;
+        &__time {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            color: #000000de;
+        }
+        &__span {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            color: $primary;
+        }
+        &__container {
+            row-gap: 10px;
+        }
+        &__name {
+            font-weight: 500;
+            font-size: 1.25rem;
+            line-height: 21px;
+            letter-spacing: 0.1px;
+            color: #333333;
+        }
+        &__mail {
+            font-size: 1rem;
+            line-height: 15px;
+            letter-spacing: 0.4px;
+            color: #333333;
+        }
+        &__avatar {
+            height: 40px;
+            width: 40px;
+        }
+    }
 }
 
 #openGamePage {
@@ -418,19 +475,14 @@ body {
             font-weight: 500;
         }
         &__btn {
-            border: 1px solid #312f2f;
+            border: 1px solid #6e6969;
             color: #312f2f;
             font-weight: 500;
             outline: none;
-            width: max-content;
+            border-radius: 2px;
+            width: max-content + 15px;
             background: $secondary;
-            height: 20px;
-            @include slowTrans();
-            &:hover {
-                cursor: pointer;
-                background: $primary;
-                color: $secondary;
-            }
+            height: 25px;
         }
     }
 }

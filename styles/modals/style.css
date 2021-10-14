@@ -298,7 +298,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   max-width: 360px;
-  min-height: 190px;
+  min-height: 250px;
   padding: 20px 30px;
   visibility: hidden;
   position: fixed;
@@ -327,7 +327,20 @@ input {
   text-align: center;
 }
 
+.result-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
 .result-text {
+  text-align: center;
   font-family: Roboto;
   font-size: 14px;
   line-height: 20px;
@@ -360,10 +373,23 @@ input {
   transition: all 0.3s ease;
 }
 
-.result-btn:hover {
-  background-color: #ffffff;
-  border: 1px solid #2196f3;
+.result-btn:first-child {
+  background: #ffffff;
   color: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.result-btn:first-child:hover {
+  background-color: #e3f2fd;
+}
+
+.result-btn:last-child {
+  background: #2196f3;
+  color: #ffffff;
+}
+
+.result-btn:last-child:hover {
+  background-color: #0465b4;
 }
 
 .relink {
@@ -442,15 +468,26 @@ input {
   font-weight: 500;
   width: 108px;
   height: 36px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .relink-btn:first-child {
-  background: #e3f2fd;
+  background: #ffffff;
   color: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.relink-btn:first-child:hover {
+  background-color: #e3f2fd;
 }
 
 .relink-btn:last-child {
   background: #2196f3;
   color: #ffffff;
+}
+
+.relink-btn:last-child:hover {
+  background-color: #0465b4;
 }
 /*# sourceMappingURL=style.css.map */
