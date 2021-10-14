@@ -193,8 +193,8 @@ export let pages = {
                     <div class="score-card" id="scorePlayerCard">
                         <img src="./assets/icons/no-avatar.svg" alt="" class="score-card__avatar" />
                         <div class="score-card__container">
-                            <h3 class="score-card__name" id="name5"></h3>
-                            <p class="score-card__mail" id="mail5"></p>
+                            <h3 class="score-card__name" id="scoreName5"></h3>
+                            <p class="score-card__mail" id="scoreMail5"></p>
                         </div>
                         <p class="score-card__time">Time: <span class="score-card__span" id="scoreTime5"></span></p>
                     </div>
