@@ -29,38 +29,43 @@ global.stateToggler!.onclick = function () {
 };
 
 export function leaderboard() {
-    let scoreTime;
-    let getTime = localStorage.getItem("time");
-    if (getTime === null) {
-        scoreTime = "00:00";
+    let scores;
+    let getScores: any = localStorage.getItem("score");
+    if (getScores === null) {
+        scores = 0;
     } else {
-        scoreTime = getTime;
+        scores = 100 - Number(getScores);
     }
 
-    let player1 = { name: "Nicci Troiani", mail: "nicci@gmail.com", time: "00:23" };
-    let player2 = { name: "George Fields", mail: "george.f@gmail.com", time: "00:29" };
-    let player3 = { name: "Jones Dermot", mail: "dermot@gamil.com", time: "00:32" };
-    let player4 = { name: "Jane Doe", mail: "jane.doe@gmail.com", time: "00:39" };
-    let player5 = { name: `${localStorage.getItem("name")} ${localStorage.getItem("lastname")}`, mail: `${localStorage.getItem("email")}`, time: `${scoreTime}` };
+    let player = { name: `${localStorage.getItem("name")} ${localStorage.getItem("lastname")}`, mail: `${localStorage.getItem("email")}`, score: `${scores}` };
+
+    let block = `
+        <img src="./assets/icons/no-avatar.svg" alt="" class="score-card__avatar" />
+        <div class="score-card__container">
+            <h3 class="score-card__name">${player.name}</h3>
+            <p class="score-card__mail">${player.mail}</p>
+        </div>
+        <p class="score-card__time">Score: <span class="score-card__span">${player.score}</span></p>
+    `;
 
     getScore();
-
-    let names = [score.name1, score.name2, score.name3, score.name4, score.name5];
-    let mail = [score.mail1, score.mail2, score.mail3, score.mail4, score.mail5];
-    let timea = [score.time1, score.time2, score.time3, score.time4, score.time5];
-
-    let getPlayers = [player1, player2, player3, player4, player5];
-
-    let players = getPlayers.sort(function (a, b) {
-        return Number(b.time) - Number(a.time);
-    });
-
-    console.log(getPlayers);
-
-    for (let i = 0; i < players.length; i++) {
-        names[i]!.innerHTML = players[i].name;
-        mail[i]!.innerHTML = players[i].mail;
-        timea[i]!.innerHTML = players[i].time;
+    if (localStorage.getItem("name") || localStorage.getItem("lastname") || localStorage.getItem("email") !== null) {
+        if (scores > 79) {
+            score.card1!.style.display = "flex";
+            score.card1!.innerHTML = block;
+        } else if (scores > 75) {
+            score.card2!.style.display = "flex";
+            score.card2!.innerHTML = block;
+        } else if (scores > 70) {
+            score.card3!.style.display = "flex";
+            score.card3!.innerHTML = block;
+        } else if (scores > 67) {
+            score.card4!.style.display = "flex";
+            score.card4!.innerHTML = block;
+        } else {
+            score.card5!.style.display = "flex";
+            score.card5!.innerHTML = block;
+        }
     }
 }
 
@@ -82,10 +87,11 @@ global.navLinkSettings!.onclick = () => {
 };
 
 //--------------------ClockTimer---------------//
-let timer: any = null;
+let timer: any;
 let time: string = "";
 let sec: any = "00";
 let min: any = "00";
+let getSec: any;
 
 function clocktimer() {
     sec = "00";
@@ -107,6 +113,7 @@ function clocktimer() {
         game.seconds!.innerText = sec;
         game.minutes!.innerText = min;
         time = `${min}:${sec}`;
+        getSec = sec;
     }, 1000);
 }
 
@@ -244,6 +251,7 @@ export function stopGame() {
     min = "00";
     game.seconds!.innerText = sec;
     game.minutes!.innerText = min;
+    game.fieldSubstrate!.style.display = "unset";
 }
 
 function clearCards(cards: ICard[]) {
@@ -296,9 +304,13 @@ function check(arr: number[], card: ICard, getSucces: any) {
                 result.name!.innerHTML = localStorage.getItem("name") || "";
                 result.time1!.innerHTML = time;
                 result.time2!.innerHTML = time;
-                localStorage.setItem("time", time);
+                if (getSec < Number(localStorage.getItem("score"))) {
+                    localStorage.setItem("score", getSec);
+                }
                 clearTimeout(timer);
-                openResultWindow();
+                setTimeout(() => {
+                    openResultWindow();
+                }, 1000);
             }
         }, 1000);
         let index1 = cards.findIndex((card: ICard) => card.imageId === arr[0]);

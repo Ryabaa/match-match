@@ -1,6 +1,6 @@
 import { gameState, stopGame } from "./script.js";
 import { addAccountBlock, checkMail } from "./utils.js";
-import { cards, game, getGame, register, result, global, relink } from "./variables/index.js";
+import { game, getGame, register, result, global, relink } from "./variables/index.js";
 if (register.open !== null) {
     register.open.onclick = function () {
         getGame();
@@ -82,10 +82,8 @@ else {
 }
 //-------Result Window-------//
 export let openResultWindow = () => {
-    if (cards.length === 0) {
-        game.substrate2.classList.toggle("substrate-visible");
-        result.window.classList.toggle("result-visible");
-    }
+    game.substrate2.classList.toggle("substrate-visible");
+    result.window.classList.toggle("result-visible");
 };
 result.btnYes.onclick = function () {
     window.location.hash = "#score";

@@ -86,10 +86,8 @@ if (reg !== "done") {
 //-------Result Window-------//
 
 export let openResultWindow = () => {
-    if (cards.length === 0) {
-        game.substrate2!.classList.toggle("substrate-visible");
-        result.window!.classList.toggle("result-visible");
-    }
+    game.substrate2!.classList.toggle("substrate-visible");
+    result.window!.classList.toggle("result-visible");
 };
 
 result.btnYes!.onclick = function () {

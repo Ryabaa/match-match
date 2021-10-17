@@ -1,4 +1,4 @@
-import { global } from "./variables/index.js";
+import { getCards, global } from "./variables/index.js";
 import { pages } from "./pages.js";
 import { gameSettings, leaderboard } from "./script.js";
 export let gameDifficult = null;
@@ -7,6 +7,7 @@ switch (location.hash) {
     case "#game":
         global.main.innerHTML = pages.game;
         global.navLinkGame.style.background = "#2F80ED";
+        getCards();
         break;
     case "#about":
         global.main.innerHTML = pages.about;
