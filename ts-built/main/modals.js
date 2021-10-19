@@ -1,6 +1,6 @@
-import { gameState, stopGame } from "./script.js";
-import { addAccountBlock, checkMail } from "./utils.js";
-import { game, getGame, register, result, global, relink } from "./variables/index.js";
+import { gameState, stopGame } from "./game.js";
+import { game, result, global, relink, register, getGame } from "../variables/index.js";
+import { checkMail } from "../utils/validate.js";
 if (register.open !== null) {
     register.open.onclick = function () {
         getGame();
@@ -80,7 +80,13 @@ else {
     global.headerAvatar.style.display = "unset";
     register.open.style.display = "none";
 }
-//-------Result Window-------//
+function addAccountBlock() {
+    if (name && lastname && email !== null) {
+        localStorage.setItem("name", name);
+        localStorage.setItem("lastname", lastname);
+        localStorage.setItem("email", email);
+    }
+}
 export let openResultWindow = () => {
     game.substrate2.classList.toggle("substrate-visible");
     result.window.classList.toggle("result-visible");
@@ -89,14 +95,19 @@ result.btnYes.onclick = function () {
     window.location.hash = "#score";
     window.location.reload();
 };
+export let gameState_modals = true;
+export function changeGameState_modals() {
+    gameState_modals = true;
+}
 result.btnNo.onclick = function () {
     stopGame();
     global.stateText.textContent = "Start";
+    gameState_modals = false;
     result.window.classList.remove("result-visible");
     game.substrate2.classList.remove("substrate-visible");
 };
 export function checkGameState(hash) {
-    if (gameState === true) {
+    if (gameState === true && gameState_modals === true) {
         relink.window.classList.toggle("relink-visible");
         game.substrate2.classList.toggle("substrate-visible");
         //pauseGame()

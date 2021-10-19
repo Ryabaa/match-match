@@ -1,6 +1,6 @@
-$primary: #2196f3;
+$primary: #272727;
 $secondary: #fff;
-$register-card: #21212114;
+$teritary: #2196f3;
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 
@@ -34,7 +34,7 @@ input {
     outline: none;
 }
 body {
-    background: $secondary;
+    background: #333333;
 }
 
 .preloader {
@@ -134,7 +134,7 @@ body {
                 z-index: 0;
                 width: 100%;
                 height: 100%;
-                background: #2f80ed;
+                background: $teritary;
             }
             &-card {
                 z-index: 1;
@@ -169,7 +169,7 @@ body {
             display: none;
         }
         &__btn {
-            background: #f2f9fe;
+            background: $teritary;
             font-weight: 500;
             height: 35px;
             font-size: 14px;
@@ -180,7 +180,7 @@ body {
             text-align: center;
             letter-spacing: 1.25px;
             text-transform: uppercase;
-            color: $primary;
+            color: $secondary;
             box-shadow: 0px 3px 5px #00000033, 0px 1px 18px #0000001f, 0px 6px 10px #00000024;
             border-radius: 4px;
             min-width: 130px;
@@ -205,7 +205,7 @@ body {
 
 .game {
     margin: 35px 0 125px;
-    background: #0000000d;
+    background: $primary;
     border-radius: 5px;
     width: 70%;
     display: flex;
@@ -214,7 +214,7 @@ body {
     align-items: center;
     &-time {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
-        background: $secondary;
+        background: #333333;
         width: 255px;
         height: 65px;
         font-weight: 500;
@@ -225,7 +225,7 @@ body {
         justify-content: center;
         text-align: center;
         letter-spacing: 0.15px;
-        color: #00000066;
+        color: $secondary;
     }
     &-field {
         display: grid;
@@ -313,7 +313,7 @@ body {
 
 .about {
     margin: 35px 0 125px;
-    background: #0000000d;
+    background: $primary;
     border-radius: 5px;
     width: 70%;
     align-items: center;
@@ -328,7 +328,7 @@ body {
         font-weight: 500;
         font-size: 1.66rem;
         letter-spacing: 0.15px;
-        color: #000000de;
+        color: $secondary;
     }
     &-container {
         grid-column: 1 / 2;
@@ -339,7 +339,7 @@ body {
         padding: 15px;
         width: 80%;
         height: 100%;
-        background-color: $secondary;
+        background-color: #333333;
         &__number {
             background-color: $primary;
             min-width: 40px;
@@ -353,11 +353,10 @@ body {
             font-size: 2rem;
         }
         &__text {
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-size: 1.4rem;
             line-height: 20px;
             letter-spacing: 0.25px;
-            color: #00000099;
+            color: $secondary;
         }
     }
     &-img {
@@ -377,7 +376,7 @@ body {
 
 .score {
     margin: 35px 0 125px;
-    background: #0000000d;
+    background: $primary;
     border-radius: 5px;
     width: 70%;
     display: flex;
@@ -389,7 +388,7 @@ body {
         font-weight: 500;
         font-size: 1.66rem;
         letter-spacing: 0.15px;
-        color: #000000de;
+        color: $secondary;
     }
     &-container {
         display: flex;
@@ -400,7 +399,7 @@ body {
     &-card {
         display: flex;
         width: 100%;
-        border-bottom: #21212114 1px solid;
+        border-bottom: #b8b8b8 1px solid;
         column-gap: 15px;
         position: relative;
         align-items: center;
@@ -417,14 +416,14 @@ body {
             font-size: 14px;
             line-height: 24px;
             letter-spacing: 0.15px;
-            color: #000000de;
+            color: $secondary;
         }
         &__span {
             font-weight: 500;
             font-size: 14px;
             line-height: 24px;
             letter-spacing: 0.15px;
-            color: $primary;
+            color: $teritary;
         }
         &__container {
             row-gap: 10px;
@@ -434,13 +433,13 @@ body {
             font-size: 1.25rem;
             line-height: 21px;
             letter-spacing: 0.1px;
-            color: #333333;
+            color: $secondary;
         }
         &__mail {
             font-size: 1rem;
             line-height: 15px;
             letter-spacing: 0.4px;
-            color: #333333;
+            color: #b8b8b8;
         }
         &__avatar {
             height: 40px;
@@ -455,7 +454,7 @@ body {
 
 .settings {
     margin: 35px 0 125px;
-    background: $secondary;
+    background: $primary;
     border-radius: 5px;
     width: 70%;
     display: grid;
@@ -470,19 +469,17 @@ body {
             font-weight: 500;
             font-size: 1.8rem;
             letter-spacing: 0.15px;
-            color: rgba(0, 0, 0, 0.87);
+            color: $secondary;
         }
         &__text {
             letter-spacing: 0.25px;
-            color: #00000099;
-            font-weight: 500;
+            color: #b8b8b8;
         }
         &__btn {
-            border: 1px solid #6e6969;
-            color: #312f2f;
-            font-weight: 500;
+            border: 1px solid #ffffff;
+            color: #fff;
             outline: none;
-            border-radius: 2px;
+            border-radius: 3px;
             width: max-content + 15px;
             background: $secondary;
             height: 25px;

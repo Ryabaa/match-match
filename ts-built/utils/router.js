@@ -1,6 +1,7 @@
-import { getCards, global } from "./variables/index.js";
+import { getCards, global } from "../variables/index.js";
 import { pages } from "./pages.js";
-import { gameSettings, leaderboard } from "./script.js";
+import { gameSettings } from "../main/settings.js";
+import { leaderboard } from "../main/leaderboard.js";
 export let gameDifficult = null;
 export let gameCardType = null;
 switch (location.hash) {
