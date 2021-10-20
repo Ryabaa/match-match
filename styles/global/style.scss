@@ -9,11 +9,11 @@ $teritary: #2196f3;
 }
 
 html {
-    font-size: 12px;
     user-select: none;
 }
 
 * {
+    font-size: 12px;
     margin: 0;
     font-weight: normal;
     text-decoration: none;
@@ -104,7 +104,7 @@ body {
             letter-spacing: 1.25px;
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 11px;
+            font-size: 0.91rem;
         }
     }
 
@@ -146,7 +146,7 @@ body {
                 background: center no-repeat url(../../assets/icons/white-circle.svg);
             }
             &-text {
-                font-size: 12px;
+                font-size: 1rem;
                 z-index: 1;
                 text-align: center;
                 color: $secondary;
@@ -172,7 +172,7 @@ body {
             background: $teritary;
             font-weight: 500;
             height: 35px;
-            font-size: 14px;
+            font-size: 1.16rem;
             display: flex;
             align-content: center;
             justify-content: center;
@@ -183,12 +183,13 @@ body {
             color: $secondary;
             box-shadow: 0px 3px 5px #00000033, 0px 1px 18px #0000001f, 0px 6px 10px #00000024;
             border-radius: 4px;
-            min-width: 130px;
+            width: 130px;
         }
         &__start-btn {
             display: none;
             & span {
                 font-weight: 500;
+                font-size: 1.16rem;
             }
         }
         &__register-btn {
@@ -217,15 +218,17 @@ body {
         background: #333333;
         width: 255px;
         height: 65px;
-        font-weight: 500;
         margin: 30px 0 60px;
-        font-size: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        letter-spacing: 0.15px;
-        color: $secondary;
+        &__item {
+            text-align: center;
+            font-weight: 500;
+            font-size: 3rem;
+            letter-spacing: 0.15px;
+            color: $secondary;
+        }
     }
     &-field {
         display: grid;
@@ -413,14 +416,14 @@ body {
             transform: translate(0, -50%);
             right: 20px;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 1.16rem;
             line-height: 24px;
             letter-spacing: 0.15px;
             color: $secondary;
         }
         &__span {
             font-weight: 500;
-            font-size: 14px;
+            font-size: 1.16rem;
             line-height: 24px;
             letter-spacing: 0.15px;
             color: $teritary;

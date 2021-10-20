@@ -1,6 +1,7 @@
 import { gameState, stopGame } from "./game.js";
 import { game, result, global, relink, register, getGame } from "../variables/index.js";
 import { checkMail } from "../utils/validate.js";
+import { clocktimer, min, resetTime, sec, timer } from "../utils/clocktimer.js";
 
 if (register.open !== null) {
     register.open.onclick = function () {
@@ -64,7 +65,6 @@ if (reg !== "done") {
             register.window!.classList.remove("register-visible");
             game.substrate2!.classList.remove("substrate-visible");
             global.stateToggler!.style.display = "unset";
-            global.headerAvatar!.style.display = "unset";
             register.open!.style.display = "none";
             location.hash = "#settings";
         }
@@ -79,7 +79,6 @@ if (reg !== "done") {
     } else {
         global.openGamePage!.style.display = "unset";
     }
-    global.headerAvatar!.style.display = "unset";
     register.open!.style.display = "none";
 }
 
@@ -114,17 +113,26 @@ result.btnNo!.onclick = function () {
     game.substrate2!.classList.remove("substrate-visible");
 };
 
+export let gamePause = false;
+export let getTime: any;
+
 export function checkGameState(hash: string) {
     if (gameState === true && gameState_modals === true) {
+        game.seconds!.innerText = sec;
+        game.minutes!.innerText = min;
+        getTime = sec;
+        gamePause = true;
+        clearTimeout(timer);
         relink.window!.classList.toggle("relink-visible");
         game.substrate2!.classList.toggle("substrate-visible");
-        //pauseGame()
     } else {
         location.hash = `#${hash}`;
     }
     relink.cancelBtn!.onclick = () => {
         relink.window!.classList.remove("relink-visible");
         game.substrate2!.classList.remove("substrate-visible");
+        let cl = false;
+        clocktimer(cl);
     };
 
     relink.okBtn!.onclick = () => {

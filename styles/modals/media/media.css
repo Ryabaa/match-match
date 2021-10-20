@@ -1,0 +1,19 @@
+@media (max-width: 680px) {
+  html {
+    font-size: 10px;
+  }
+  .register {
+    width: 90%;
+  }
+  .register-body {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .register-avatar {
+    display: none;
+  }
+  .relink {
+    row-gap: 30px;
+  }
+}
+/*# sourceMappingURL=media.css.map */

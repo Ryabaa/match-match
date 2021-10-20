@@ -8,6 +8,8 @@
         <link rel="shortcut icon" href="./assets/icons/favicon.svg" type="image/x-icon" />
         <link rel="stylesheet" href="./styles/global/style.css" />
         <link rel="stylesheet" href="./styles/modals/style.css" />
+        <link rel="stylesheet" href="./styles/modals/media/media.css" />
+        <link rel="stylesheet" href="./styles/global/media/media.css" />
     </head>
     <body id="body">
         <div class="preloader">
@@ -51,7 +53,6 @@
             <div class="header-container">
                 <button id="gameStateToggler" class="header-container__btn header-container__start-btn"><span id="gameStateText">Start</span> game</button>
                 <button id="openGamePage" class="header-container__btn">Open game</button>
-                <img src="./assets/icons/no-avatar.svg" class="header-container__avatar" id="headerAvatar" />
                 <button id="registerOpen" class="header-container__btn header-container__register-btn">register new player</button>
             </div>
         </header>
@@ -93,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="./assets/icons/no-avatar.svg" />
+                <img class="register-avatar" src="./assets/icons/no-avatar.svg" />
             </div>
             <div class="register-footer">
                 <button class="register-footer__btn" id="registerCancel">Cancel</button>

@@ -1,0 +1,252 @@
+@media (max-width: 1250px) {
+  .game {
+    width: 90%;
+  }
+  .game-field__container {
+    width: 130px;
+  }
+  .img {
+    width: 130px;
+  }
+  .img img {
+    width: 130px;
+  }
+  .about {
+    width: 80%;
+    padding: 35px;
+  }
+}
+
+@media (max-width: 950px) {
+  html {
+    font-size: 10px;
+  }
+  .header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr auto;
+        grid-template-columns: 1fr auto;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    height: 110px;
+  }
+  .header-logo {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .header-nav {
+    margin: 30px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+    margin: 0;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+  .header-nav__container {
+    width: 80px;
+  }
+  .header-conatiner {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  .header-conatiner__avatar {
+    display: none;
+  }
+  .game {
+    width: 100%;
+  }
+  .game-field__container {
+    width: 110px;
+  }
+  .img {
+    width: 110px;
+  }
+  .img img {
+    width: 110px;
+  }
+  .about {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 660px) {
+  .about {
+    padding: 15px;
+    -ms-grid-columns: 1fr auto;
+        grid-template-columns: 1fr auto;
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+  }
+  .about-container {
+    width: 100%;
+  }
+  .about-img {
+    width: 170px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    height: 140px;
+  }
+  .header-nav {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  .game-field {
+    gap: 10px;
+  }
+  .game-field__container {
+    width: 85px;
+  }
+  .img {
+    width: 85px;
+  }
+  .img img {
+    width: 85px;
+  }
+  .settings {
+    width: 90%;
+  }
+  .score {
+    width: 90%;
+  }
+  .score-card {
+    width: 100%;
+  }
+  .score-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .header-container__register-btn {
+    width: 130px;
+    line-height: 17px;
+    height: 60px;
+  }
+  .about {
+    padding: 15px;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .about-title {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    margin-bottom: 30px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  .about-container {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+  }
+  .about-container1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  .about-container2 {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4 / 5;
+  }
+  .about-container3 {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6 / 7;
+  }
+  .about-img {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    width: 100%;
+  }
+  .about-img1 {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+  }
+  .about-img2 {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 / 6;
+  }
+  .about-img3 {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    grid-row: 7 / 8;
+  }
+  .settings-container {
+    width: 170px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 10px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 380px) {
+  .game-field {
+    gap: 8px;
+  }
+  .game-field__container {
+    width: 70px;
+  }
+  .img {
+    width: 70px;
+  }
+  .img img {
+    width: 70px;
+  }
+  .header-container__btn {
+    border-radius: 2px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80px;
+    line-height: 15px;
+    font-size: 1rem;
+  }
+  .header-container span {
+    font-size: 1rem;
+  }
+  .score {
+    padding: 30px 10px 10px 15px;
+  }
+}
+/*# sourceMappingURL=media.css.map */

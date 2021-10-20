@@ -1,0 +1,17 @@
+@media (max-width: 680px) {
+    html {
+        font-size: 10px;
+    }
+    .register {
+        width: 90%;
+        &-body {
+            grid-template-columns: 1fr;
+        }
+        &-avatar {
+            display: none;
+        }
+    }
+    .relink {
+        row-gap: 30px;
+    }
+}

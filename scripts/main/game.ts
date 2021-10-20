@@ -1,9 +1,10 @@
-import { clocktimer, getSec, min, resetTime, sec, time, timer } from "../utils/clocktimer.js";
-import { openResultWindow, checkGameState, gameState_modals, changeGameState_modals } from "./modals.js";
+import { clearTime, clocktimer, getSec, min, resetTime, sec, time, timer } from "../utils/clocktimer.js";
+import { openResultWindow, checkGameState, gameState_modals, changeGameState_modals, gamePause } from "./modals.js";
 import { images, getImages } from "./settings.js";
 import { IImage, getScore, cards, getCards, score, ICard, game, animalsEasy, animalsMedium, fruitsEasy, fruitsMedium, getGame, resetCards, result, global } from "../variables/index.js";
 
 export let gameState = false;
+let cl = true;
 
 global.stateToggler!.onclick = function () {
     if (gameState_modals !== true) {
@@ -33,7 +34,8 @@ function startGame() {
     getImages();
     getGame();
     spawnImages(cards, shuffle(images));
-    clocktimer();
+    clearTime();
+    clocktimer(cl);
     game.fieldSubstrate!.style.display = "none";
 }
 
@@ -42,7 +44,7 @@ export function stopGame() {
     getGame();
     getCards();
     clearCards(cards);
-    resetTime();
+    clearTime();
     clearTimeout(timer);
     game.seconds!.innerText = sec;
     game.minutes!.innerText = min;
