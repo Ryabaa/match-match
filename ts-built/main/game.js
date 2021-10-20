@@ -68,6 +68,7 @@ function spawnImages(cards, images) {
 }
 let getSucces = null;
 let arr = [];
+let fullScore;
 function check(arr, card, getSucces) {
     if (arr[0] !== arr[1]) {
         game.fieldSubstrate.style.display = "unset";
@@ -95,7 +96,10 @@ function check(arr, card, getSucces) {
                 result.time1.innerHTML = time;
                 result.time2.innerHTML = time;
                 let getScore = Number(localStorage.getItem("score"));
-                if (getSec < getScore) {
+                if (getScore === 0) {
+                    fullScore = 100;
+                }
+                if (getScore < fullScore) {
                     localStorage.setItem("score", getSec);
                 }
                 clearTimeout(timer);

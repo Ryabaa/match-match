@@ -74,6 +74,7 @@ function spawnImages(cards: ICard[], images: IImage[]) {
 
 let getSucces: any = null;
 let arr: number[] = [];
+let fullScore: number;
 
 function check(arr: number[], card: ICard, getSucces: any) {
     if (arr[0] !== arr[1]) {
@@ -102,7 +103,10 @@ function check(arr: number[], card: ICard, getSucces: any) {
                 result.time1!.innerHTML = time;
                 result.time2!.innerHTML = time;
                 let getScore = Number(localStorage.getItem("score"));
-                if (getSec < getScore) {
+                if (getScore === 0) {
+                    fullScore = 100;
+                }
+                if (getScore < fullScore) {
                     localStorage.setItem("score", getSec);
                 }
                 clearTimeout(timer);
