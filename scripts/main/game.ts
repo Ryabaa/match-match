@@ -103,10 +103,12 @@ function check(arr: number[], card: ICard, getSucces: any) {
                 result.time1!.innerHTML = time;
                 result.time2!.innerHTML = time;
                 let getScore = Number(localStorage.getItem("score"));
+                console.log(getScore);
                 if (getScore === 0) {
+                    console.log(100);
                     fullScore = 100;
                 }
-                if (getScore < fullScore) {
+                if (getScore < fullScore || Number(localStorage.getItem("score"))) {
                     localStorage.setItem("score", getSec);
                 }
                 clearTimeout(timer);

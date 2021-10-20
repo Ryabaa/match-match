@@ -43,7 +43,6 @@ input {
     z-index: 11;
     top: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 150%;
     background: $primary;
     display: grid;
     border-radius: 5px;
@@ -207,7 +206,6 @@ input {
     z-index: 11;
     top: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 150%;
     opacity: 0;
     background-color: $primary;
     border-radius: 5px;
@@ -296,7 +294,6 @@ input {
     border-radius: 5px;
     top: 30%;
     transform: translate(-50%, -50%);
-    margin-bottom: 150%;
     opacity: 0;
     @include slowTrans();
     &-visible {

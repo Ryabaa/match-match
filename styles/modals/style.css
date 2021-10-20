@@ -34,7 +34,6 @@ input {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  margin-top: 150%;
   background: #272727;
   display: -ms-grid;
   display: grid;
@@ -282,7 +281,6 @@ input {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  margin-top: 150%;
   opacity: 0;
   background-color: #272727;
   border-radius: 5px;
@@ -401,7 +399,6 @@ input {
   top: 30%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  margin-bottom: 150%;
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
